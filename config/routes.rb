@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :themes do
+
     resources :topics, only: [:new, :create]
   end
 
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
   end
 
   resources :items, only: [:show, :edit, :update, :destroy]
+
 end
