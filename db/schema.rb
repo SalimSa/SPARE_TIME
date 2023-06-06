@@ -10,9 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_05_154331) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_05_170855) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "collaborations", force: :cascade do |t|
+    t.integer "role"
+    t.bigint "user_id", null: false
+    t.bigint "theme_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["theme_id"], name: "index_collaborations_on_theme_id"
+    t.index ["user_id"], name: "index_collaborations_on_user_id"
+  end
+
+  create_table "components", force: :cascade do |t|
+    t.text "content"
+    t.string "type"
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_components_on_item_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "type"
+    t.bigint "topic_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_items_on_topic_id"
+  end
+
+  create_table "themes", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_themes_on_user_id"
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "theme_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["theme_id"], name: "index_topics_on_theme_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +73,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_154331) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "collaborations", "themes"
+  add_foreign_key "collaborations", "users"
+  add_foreign_key "components", "items"
+  add_foreign_key "items", "topics"
+  add_foreign_key "themes", "users"
+  add_foreign_key "topics", "themes"
 end
