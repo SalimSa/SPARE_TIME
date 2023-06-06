@@ -3,6 +3,18 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  resources :themes do
+    resources :topics, only: [:new, :create]
+  end
+
+  resources :topics, only: [:show, :edit, :update, :destroy] do
+    resources :items, only: [:new, :create]
+  end
+
+  resources :items, only: [:show, :edit, :update, :destroy]
+end
+
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
   # Defines the root path route ("/")
   # root "articles#index"
-end
