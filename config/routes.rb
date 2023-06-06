@@ -7,9 +7,14 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :themes do
-    resources :topics do
-      resources :items
-    end
+
+    resources :topics, only: [:new, :create]
   end
+
+  resources :topics, only: [:show, :edit, :update, :destroy] do
+    resources :items, only: [:new, :create]
+  end
+
+  resources :items, only: [:show, :edit, :update, :destroy]
 
 end
