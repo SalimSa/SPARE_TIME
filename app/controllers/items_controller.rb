@@ -2,11 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].nil? || params[:query] == ''
-      @items = Item.all
-    else
-      @items = Item.search_by_title_and_description_and_price_and_location(params[:query])
-    end
+    @item = Item.all
   end
 
   def new
@@ -28,10 +24,6 @@ class ItemsController < ApplicationController
 
     @items = Item.all
 
-    @markers = [{
-        lat: @item.latitude,
-        lng: @item.longitude
-      }]
   end
 
   def edit

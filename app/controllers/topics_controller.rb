@@ -2,11 +2,7 @@ class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].nil? || params[:query] == ''
-      @topics = Topic.all
-    else
-      @topics = Topic.search_by_title_and_description_and_price_and_location(params[:query])
-    end
+    @topic = Topic.all
   end
 
   def new
@@ -25,13 +21,8 @@ class TopicsController < ApplicationController
 
   def show
     @theme = Theme.new
-
     @topics = Topic.all
 
-    @markers = [{
-        lat: @topic.latitude,
-        lng: @topic.longitude
-      }]
   end
 
   def edit
@@ -58,6 +49,10 @@ class TopicsController < ApplicationController
 
   def topic_params
     params.require(:topic).permit(:title, :description)
+  end
+
+  def item_params
+    params.require(:item).permit(:title, :description)
   end
 
 end

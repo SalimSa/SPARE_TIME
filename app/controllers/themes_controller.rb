@@ -2,11 +2,7 @@ class ThemesController < ApplicationController
   before_action :set_theme, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].nil? || params[:query] == ''
-      @themes = Theme.all
-    else
-      @themes = Theme.search_by_title_and_description_and_price_and_location(params[:query])
-    end
+    @theme = Theme.all
   end
 
   def new
@@ -28,10 +24,10 @@ class ThemesController < ApplicationController
 
     @themes = Theme.all
 
-    @markers = [{
-        lat: @theme.latitude,
-        lng: @theme.longitude
-      }]
+    # @markers = [{
+    #     lat: @theme.latitude,
+    #     lng: @theme.longitude
+    #   }]
   end
 
   def edit

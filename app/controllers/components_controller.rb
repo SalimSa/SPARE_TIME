@@ -2,11 +2,7 @@ class ComponentsController < ApplicationController
   before_action :set_component, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].nil? || params[:query] == ''
-      @components = Component.all
-    else
-      @components = Component.search_by_title_and_description_and_price_and_location(params[:query])
-    end
+    @component = Component.all
   end
 
   def new
@@ -27,11 +23,6 @@ class ComponentsController < ApplicationController
     @item = Item.new
     @components = Component.all
 
-    @markers = [{
-        lat: @component.latitude,
-        lng: @component.longitude
-      }]
-
   end
 
   def edit
@@ -49,8 +40,6 @@ class ComponentsController < ApplicationController
     @component.destroy
     redirect_to components_path, status: :see_other
   end
-
-
 
   private
   def set_component
