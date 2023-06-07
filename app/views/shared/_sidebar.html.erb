@@ -1,0 +1,21 @@
+<%# <div class="sidebar" data-controller="sidebar-dropdown-controller">
+    <% current_user.themes.each do |theme| %>
+    <%# <a class="theme dropdown-btn"  data-sidebar-dropdown-target="dropdown" href=""><%= theme.title</a> %>
+    <%# <div class="dropdown-container"> %>
+      <%# <% theme.topics.each do |topic| %>
+        <%# <a class="topic" href=""><%= topic.title</a> %>
+      <%# <% end %>
+    <%# </div> %>
+    <%# <% end %>
+
+<%# </div> %>
+<div class="sidebar" data-controller="sidebar-dropdown-controller">
+  <% current_user.themes.each do |theme| %>
+    <a class="theme dropdown-btn" data-action="click->sidebar-dropdown-controller#toggleDropdown" data-sidebar-dropdown-target="dropdown" href=""><%= theme.title %></a>
+    <div class="dropdown-container" data-target="sidebar-dropdown-controller.dropdownContent">
+      <% theme.topics.each do |topic| %>
+        <a class="topic" href=""><%= topic.title %></a>
+      <% end %>
+    </div>
+  <% end %>
+</div>

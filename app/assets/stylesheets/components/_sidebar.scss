@@ -1,0 +1,30 @@
+.sidebar{
+  // position:fixed;
+  width: 300px;
+  background-color: #3C96B1;
+}
+
+.sidebar a {
+  text-decoration: none;
+  display: block;
+  // padding: 8px 20px;
+}
+
+.theme {
+  font-size: 24px;
+}
+
+.topic {
+  font-size: 20px;
+  padding-left: 16px;
+}
+
+.sidebar a:hover{
+  background: #255969;
+  color:white
+}
+
+.dropdown-container {
+  display: none;
+  
+}
