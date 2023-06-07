@@ -20,8 +20,8 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @theme = Theme.new
-    @topics = Topic.all
+    @topic = Topic.new
+    @items = Item.all
 
   end
 

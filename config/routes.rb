@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :themes do
-    resources :topics, only: [:new, :create]
+    resources :topics, only: [:show, :new, :create]
   end
 
   resources :topics, only: [:show, :edit, :update, :destroy] do
