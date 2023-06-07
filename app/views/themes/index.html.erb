@@ -1,12 +1,26 @@
 <div class="container">
-  <div class="Banner-show">
-    <h1>SpareTime</h1>
-    <h3>Research made easy!</h3>
+<div class="banner">
+  <h2 class="banner-title">Your Title</h2>
+</div>
+  <div class="banner">
+    <img src="" alt="Banner Image">
+    <div class="banner-title">
+      <h1>SpareTime</h1>
+      <h3>Research made easy!</h3>
+    </div>
   </div>
-  <div class="theme-cards">
+  <div class="banner"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1564609116494-380be7238d7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3R1ZHlpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60)">
+  <h1>SpareTime</h1>
+  </div>
+  <div class="theme-card">
+    <div class="theme-photo">
+
+    </div>
     <% @themes.each do |theme| %>
-      <%= @theme.title %>
-      <%= @theme.despcription %>
+      <div class="theme-content">
+        <h3><%= theme.title %></h3>
+        <p><%= theme.description %></p>
+      </div>
     <% end %>
   </div>
 </div>

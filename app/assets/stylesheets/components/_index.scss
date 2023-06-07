@@ -5,26 +5,59 @@
 @import "navbar";
 
 
-.topic-cards {
-  overflow: hidden;
-  height: 120px;
+.theme-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
+  display: flex;
+
+}
+
+.theme-content {
+  width: 400px;
+  margin: 10px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
   align-items: center;
   padding: 16px;
 }
 
-.topic-cards h3 {
-  font-size: 16px;
+.theme-content h3 {
+  font-family: "raleway";
+  font-size: 30px;
   font-weight: bold;
-  margin: 0;
+  margin-bottom: 10px;
 }
 
-.topic-cards h6 {
-  font-size: 12px;
+.theme-content p {
+  font-family: "lato";
+  font-size: 20px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.banner-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
 }
