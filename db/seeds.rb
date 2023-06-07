@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts "Cleaning database..."
+Component.destroy_all
+Collaboration.destroy_all
+Item.destroy_all
+Topic.destroy_all
+Theme.destroy_all
