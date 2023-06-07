@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning database..."
-Component.destroy_all
-Collaboration.destroy_all
+# Component.destroy_all
+# Collaboration.destroy_all
 Item.destroy_all
 Topic.destroy_all
 Theme.destroy_all
@@ -22,8 +22,8 @@ puts 'Creating themes...'
 travel = Theme.new(title: "Travel", description: "Best places to travel to !", user_id: user1.id)
 travel.save!
 
-puts 'Creating themes...'
-travel = Theme.new(title: "Travel", description: "Best places to travel to !", user_id: user1.id)
+puts 'Creating topics...'
+cuba = Topic.new(title: "Cuba", description: "The most popular destination in south Africa !", theme: "travel", user_id: user1.id)
 travel.save!
 
 puts 'Finished!'
