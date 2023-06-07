@@ -2,7 +2,7 @@ class ThemesController < ApplicationController
   before_action :set_theme, only: [:show, :edit, :update, :destroy]
 
   def index
-    @theme = Theme.all
+    @themes = Theme.all
   end
 
   def new
@@ -53,6 +53,6 @@ class ThemesController < ApplicationController
   end
 
   def theme_params
-    params.require(:theme).permit(:title, :description)
+    params.require(:theme).permit(:title, :description, :photo)
   end
 end
