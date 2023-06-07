@@ -73,6 +73,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_104409) do
     t.index ["topic_id"], name: "index_items_on_topic_id"
   end
 
+  create_table "link_components", force: :cascade do |t|
+    t.string "url"
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_link_components_on_item_id"
+  end
+
+  create_table "text_components", force: :cascade do |t|
+    t.text "paragraph"
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_text_components_on_item_id"
+  end
+
   create_table "themes", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -110,6 +126,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_104409) do
   add_foreign_key "collaborations", "users"
   add_foreign_key "components", "items"
   add_foreign_key "items", "topics"
+  add_foreign_key "link_components", "items"
+  add_foreign_key "text_components", "items"
   add_foreign_key "themes", "users"
   add_foreign_key "topics", "themes"
 end

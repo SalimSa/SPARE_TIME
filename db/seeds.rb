@@ -12,3 +12,18 @@ Collaboration.destroy_all
 Item.destroy_all
 Topic.destroy_all
 Theme.destroy_all
+
+puts "Creating users..."
+user1 = User.new(email: "pierro@gmail.com", password: "123456")
+# user1.photo.attach(io: file_profile_one, filename: "avatar.pic", content_type: "image/png")
+user1.save
+
+puts 'Creating themes...'
+travel = Theme.new(title: "Travel", description: "Best places to travel to !", user_id: user1.id)
+travel.save!
+
+puts 'Creating themes...'
+travel = Theme.new(title: "Travel", description: "Best places to travel to !", user_id: user1.id)
+travel.save!
+
+puts 'Finished!'
