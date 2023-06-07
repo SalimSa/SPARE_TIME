@@ -1,13 +1,12 @@
-Hello from the theme index
 <div class="container">
   <div class="Banner-show">
     <h1>SpareTime</h1>
     <h3>Research made easy!</h3>
   </div>
-  <div class="topics-cards">
-    <%= @themes.each do |theme| %>
+  <div class="theme-cards">
+    <% @themes.each do |theme| %>
       <%= @theme.title %>
       <%= @theme.despcription %>
-    <%= end %>
+    <% end %>
   </div>
 </div>

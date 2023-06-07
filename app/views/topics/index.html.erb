@@ -1,0 +1,9 @@
+<div class="container">
+  <h1><%= Theme.title %></h1>
+  <div class="topic-card">
+    <% @topics.each do |topic| %>
+      <h3><%= @topic.title %></h3>
+      <h6><%= @topic.despcription %></h6>
+    <% end %>
+  </div>
+</div>
