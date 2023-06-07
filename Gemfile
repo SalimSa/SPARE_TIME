@@ -47,6 +47,8 @@ gem "sassc-rails"
 
 gem "geocoder"
 
+gem "dotenv-rails"
+
 gem "cloudinary"
 
 gem "pg_search"
