@@ -14,16 +14,19 @@ Topic.destroy_all
 Theme.destroy_all
 
 puts "Creating users..."
-user1 = User.new(email: "pierro@gmail.com", password: "123456")
+user1 = User.create(email: "pierre@gmail.com", password: "123456")
+user2 = User.create(email: "marta@gmail.com", password: "123456")
+user3 = User.create(email: "salim@gmail.com", password: "123456")
 # user1.photo.attach(io: file_profile_one, filename: "avatar.pic", content_type: "image/png")
-user1.save
 
 puts 'Creating themes...'
-travel = Theme.new(title: "Travel", description: "Best places to travel to !", user_id: user1.id)
+travel = Theme.new(title: "Travel", description: "Best places to travel to !", user_id: 1)
 travel.save!
+fooding = Theme.new(title: "Fooding", description: "Best places whereeat !", user_id: 2)
+fooding.save!
 
 puts 'Creating topics...'
-cuba = Topic.new(title: "Cuba", description: "The most popular destination in south Africa !", theme: "travel", user_id: user1.id)
-travel.save!
+cuba = Topic.new(title: "Cuba", description: "The most popular destination in south America !", theme: travel)
+cuba.save!
 
 puts 'Finished!'
