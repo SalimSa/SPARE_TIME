@@ -51,7 +51,28 @@ paella.save!
 apfelstrudel = Topic.new(title: "Apfelstrudel", description: "More commonly known as Apple Strudel, Apfelstrudel is a popular pastry in Austria and other parts of Europe.", theme: fooding)
 apfelstrudel.save!
 
+ancientrome = Topic.new(title: "Ancient Rome", description: "Explore the fascinating history and ruins of Ancient Rome.", theme: historical)
+ancientrome.save!
+machupicchu = Topic.new(title: "Machu Picchu", description: "Discover the ancient Inca city nestled in the Andes Mountains.", theme: historical)
+machupicchu.save!
+yoga = Topic.new(title: "Yoga Retreat", description: "Immerse yourself in a peaceful yoga retreat surrounded by nature.", theme: wellness)
+yoga.save!
+meditation = Topic.new(title: "Meditation Retreat", description: "Find inner calm and serenity in a tranquil meditation retreat.", theme: wellness)
+meditation.save!
 
+# Create topics for Artistic Exploration
+parisiens = Topic.new(title: "Parisian Art Scene", description: "Experience the vibrant art scene and museums of Paris.", theme: artistic)
+parisiens.save!
+
+street = Topic.new(title: "Street Art Tour", description: "Discover hidden street art gems in various cities around the world.", theme: artistic)
+street.save!
+
+# Create topics for Adventure Escapes
+hiking = Topic.new(title: "Hiking in Patagonia", description: "Embark on an exhilarating hiking adventure in the stunning Patagonian landscapes.", theme: travel)
+hiking.save!
+
+safari = Topic.new(title: "Safari in Serengeti", description: "Witness incredible wildlife and go on a thrilling safari in the Serengeti.", theme: travel)
+safari.save!
 
 puts 'Creating items...'
 havana = Item.new(title: "Havana Oulala", description: "is a super cozy place at the bottom of Calle Muralla, just a stone through from the Plaza Vieja.", topic: cuba)
