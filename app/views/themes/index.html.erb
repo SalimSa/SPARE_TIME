@@ -4,10 +4,22 @@ Hello from the theme index
     <h1>SpareTime</h1>
     <h3>Research made easy!</h3>
   </div>
+
+  <%# SEARCH BAR %>
+  <%= form_with url: themes_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a theme"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+  <%# END SEARCH BAR %>
+
   <div class="topics-cards">
-    <%= @themes.each do |theme| %>
-      <%= @theme.title %>
-      <%= @theme.despcription %>
-    <%= end %>
+    <% @themes.each do |theme| %>
+      <%= theme.title %>
+      <%= theme.description %>
+    <% end %>
   </div>
 </div>

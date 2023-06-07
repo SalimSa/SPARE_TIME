@@ -2,6 +2,14 @@ class ThemesController < ApplicationController
   before_action :set_theme, only: [:show, :edit, :update, :destroy]
 
   def index
+    # search bar
+    if params[:query].present?
+      @themes = Theme.where(title: params[:query])
+    else
+      @themes = Theme.all
+    end
+    # end of search bar
+
     @themes = Theme.all
   end
 
