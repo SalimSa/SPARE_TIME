@@ -4,9 +4,6 @@
   <h1>SpareTime</h1>
   <h3>Research made easy!</h3>
 </div> %>
-<%# <div class="create-btn"> %>
-  <%# <% link_to "Add a new theme", new_theme_path %>
-<%# </div> %>
 
 <div class="container">
 
@@ -30,6 +27,10 @@
   </div>
   <%# END SEARCH BAR %>
 
+<div class="create-btn">
+  <%= link_to "Add a new theme", new_theme_path%>
+</div>
+
 <div class="container theme-card-container">
   <% @themes.each do |theme| %>
     <%= link_to theme_path(theme) do %>
@@ -37,7 +38,7 @@
         <div class="theme-photo">
         </div>
         <div class="theme-content">
-          <h3><%= theme.title %></h3>
+          <h3><%= theme.title.truncate(20) %></h3>
           <p><%= theme.description.truncate(70) %></p>
         </div>
       </div>

@@ -6,18 +6,41 @@
 @import "sidebar";
 
 
-.create-btn {
-  width: 200px;
+.back-btn {
+  font-family: "lato";
+  width: 165px;
   margin-top: 30px;
   margin-left: 80px;
-  background-color: #3C96B1;
-  color: white;
+  background-color: #5D2A42;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
+  // make sure that the content is well centered in the padding!!
   a {
     text-decoration: none;
+    color: white;
+  }
+}
+.topic-heading {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.create-btn {
+  font-family: "lato";
+  width: 165px;
+  margin-top: 30px;
+  margin-left: 80px;
+  background-color: #3C96B1;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  // make sure that the content is well centered in the padding!!
+  a {
+
+    text-decoration: none;
+    color: white;
   }
 }
 

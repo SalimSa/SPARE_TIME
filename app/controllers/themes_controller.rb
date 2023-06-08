@@ -37,21 +37,21 @@ class ThemesController < ApplicationController
     #   }]
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    if @theme.update(theme_params)
-      redirect_to theme_path(@theme)
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @theme.update(theme_params)
+  #     redirect_to theme_path(@theme)
+  #   else
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
 
-  def destroy
-    @theme.destroy
-    redirect_to themes_path, status: :see_other
-  end
+  # def destroy
+  #   @theme.destroy
+  #   redirect_to themes_path, status: :see_other
+  # end
 
 
   private

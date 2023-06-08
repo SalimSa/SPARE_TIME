@@ -1,5 +1,11 @@
-<h2><%= @theme.title %></h2>
-<h2><%= @theme.description %></h2>
+<div class="topic-heading">
+  <h2><%= @theme.title %></h2>
+  <h3><%= @theme.description %></h3>
+</div>
+
+<div class="create-btn">
+  <%= link_to "Add a new topic", new_theme_topic_path(@theme)%>
+</div>
 
 <div class="container theme-card-container">
   <% @topics.each do |topic| %>
@@ -8,10 +14,14 @@
         <div class="theme-photo">
         </div>
         <div class="theme-content">
-          <h3><%= topic.title %></h3>
+          <h3><%= topic.title.truncate(25)  %></h3>
           <p><%= topic.description.truncate(70) %></p>
         </div>
       </div>
     <% end %>
   <% end %>
+</div>
+
+<div class="back-btn">
+  <%= link_to "Back", themes_path%>
 </div>
