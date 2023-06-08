@@ -20,9 +20,7 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.new
     @items = Item.all
-
   end
 
   def edit
