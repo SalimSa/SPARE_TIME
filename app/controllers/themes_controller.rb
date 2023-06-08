@@ -29,9 +29,8 @@ class ThemesController < ApplicationController
 
   def show
     @theme.user = current_user
-
     @themes = Theme.all
-
+    @topics = @theme.topics
     # @markers = [{
     #     lat: @theme.latitude,
     #     lng: @theme.longitude

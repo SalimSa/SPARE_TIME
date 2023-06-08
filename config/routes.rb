@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  get '/landing', to: 'pages#landing'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get "profile", to: "pages#profile"
   get "home", to: "pages#home"
 
   resources :themes do
-    resources :topics, only: [:new, :create]
+    resources :topics, only: [:show, :new, :create]
   end
 
   resources :topics, only: [:show, :edit, :update, :destroy] do

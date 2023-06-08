@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
   def index
-    @topic = Topic.all
+    @topics = Topic.all
   end
 
   def new
@@ -20,8 +20,8 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @theme = Theme.new
-    @topics = Topic.all
+    @topic = Topic.new
+    @items = Item.all
 
   end
 
