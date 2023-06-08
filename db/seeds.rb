@@ -12,6 +12,7 @@ puts "Cleaning database..."
 Item.destroy_all
 Topic.destroy_all
 Theme.destroy_all
+User.destroy_all
 
 puts "Creating users..."
 user1 = User.create(email: "pierre@gmail.com", password: "123456")
@@ -20,22 +21,22 @@ user3 = User.create(email: "salim@gmail.com", password: "123456")
 # user1.photo.attach(io: file_profile_one, filename: "avatar.pic", content_type: "image/png")
 
 puts 'Creating themes...'
-travel = Theme.new(title: "Travel", description: "Best places to travel to !", user_id: 1)
+travel = Theme.new(title: "Travel", description: "Best places to travel to !", user: user1)
 travel.save!
 
-fooding = Theme.new(title: "Fooding", description: "Best places whereeat !", user_id: 2)
+fooding = Theme.new(title: "Fooding", description: "Best places whereeat !", user: user2)
 fooding.save!
 
-adventure = Theme.new(title: "Adventure Escapes", description: "Experience thrilling adventures in breathtaking locations.", user_id: 2)
+adventure = Theme.new(title: "Adventure Escapes", description: "Experience thrilling adventures in breathtaking locations.", user: user2)
 adventure.save!
 
-artistic = Theme.new(title: "Artistic Exploration", description: "Immerse yourself in the vibrant world of art and creativity.", user_id: 2)
+artistic = Theme.new(title: "Artistic Exploration", description: "Immerse yourself in the vibrant world of art and creativity.", user: user2)
 artistic.save!
 
-wellness = Theme.new(title: "Wellness Retreats", description: "Rejuvenate your mind, body, and soul with soothing wellness retreats.", user_id: 2)
+wellness = Theme.new(title: "Wellness Retreats", description: "Rejuvenate your mind, body, and soul with soothing wellness retreats.", user: user2)
 wellness.save!
 
-historical = Theme.new(title: "Historical Wonders", description: "Discover the fascinating history and architectural wonders of different eras.", user_id: 2)
+historical = Theme.new(title: "Historical Wonders", description: "Discover the fascinating history and architectural wonders of different eras.", user: user2)
 historical.save!
 
 puts 'Creating topics for travel...'
