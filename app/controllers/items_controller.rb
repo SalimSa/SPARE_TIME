@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_topic, only: [:new, :show, :edit, :update, :destroy, :create]
 
   def index
     @items = Item.all
@@ -11,41 +11,40 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.user = current_user
+    @item.topic = @topic
     if @item.save
-      redirect_to items_path
+      redirect_to topic_path(@topic)
     else
       render :new, status: :unprocessable_entity
     end
   end
+
 
   def show
     @topic = Topic.new
-
     @items = Item.all
-
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    if @item.update(item_params)
-      redirect_to item_path(@item)
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @item.update(item_params)
+  #     redirect_to item_path(@item)
+  #   else
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
 
-  def destroy
-    @item.destroy
-    redirect_to items_path, status: :see_other
-  end
+  # def destroy
+  #   @item.destroy
+  #   redirect_to items_path, status: :see_other
+  # end
 
 
   private
-  def set_item
-    @item = Item.find(params[:id])
+  def set_topic
+    @topic = Topic.find(params[:topic_id])
   end
 
   def item_params
