@@ -22,7 +22,7 @@ user3 = User.create(email: "salim@gmail.com", password: "123456")
 # user1.photo.attach(io: file_profile_one, filename: "avatar.pic", content_type: "image/png")
 
 puts 'Creating themes...'
-travel = Theme.new(title: "Travel", description: "Best places to travel to !", user: user1)
+travel = Theme.new(title: "Travel", description: "Best places to travel to !", user: user2)
 travel.save!
 
 fooding = Theme.new(title: "Fooding", description: "Best places whereeat !", user: user2)
@@ -41,7 +41,7 @@ historical = Theme.new(title: "Historical Wonders", description: "Discover the f
 historical.save!
 
 puts 'Creating topics for travel...'
-cuba = Topic.new(title: "Cuba", description: "Cuba’s capital is almost 500 years old and a riot of color.", theme: travel)
+cuba = Topic.new(title: "Cuba", description: "Cuba is almost 500 years old and a riot of color.", theme: travel)
 cuba.save!
 bali = Topic.new(title: "Bali", description: "Indonesian most  beaches, volcanoes, Komodo dragons and jungles sheltering elephants and tigers", theme: travel)
 bali.save!

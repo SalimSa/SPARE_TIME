@@ -23,7 +23,16 @@
 
 .topic {
   font-size: 20px;
+  margin-left: 5px;
   padding-left: 30px;
+  transition: all 0.3s ease;
+}
+
+
+.item {
+  font-size: 15px;
+  margin-left: 25px;
+  padding-left: 50px;
   transition: all 0.3s ease;
 }
 
@@ -33,7 +42,6 @@
 }
 
 .dropdown-container {
-  display: none;
   padding-left: 30px;
 }
 
@@ -46,4 +54,8 @@
 .dropdown-container a:hover {
   color: #fff;
   transform: translateX(10px);
+}
+
+.hidden {
+  display: none;
 }
