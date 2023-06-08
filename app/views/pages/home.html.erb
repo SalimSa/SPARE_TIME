@@ -1,20 +1,57 @@
-<body class="home-page">
-<div class="content">
-  <h1>Our first view Home page 🚀</h1>
-  <% if user_signed_in? %>
-  <h2>Welcome <%=current_user.email %></h2>
-  <% else %>
-  <h2>Welcome</h2>
-  <% end %>
+<div class="flex-container">
 
-<br>
+  <div class="flex-item">
+    <div class="container theme-card-container">
+      <ul>
+      <h3>Themes</h3>
+          <% @themes.each do |theme| %>
+            <%= link_to theme_path(theme) do %>
+              <div class="theme-card">
+                <div class="theme-photo">
+                </div>
+                <div class="theme-content">
+                  <h3><%= theme.title %></h3>
+                  <p><%= theme.description.truncate(70) %></p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+      </div>
+    </ul>
+  </div>
 
-<a href="landing.html" class="btn">Landing</a>
+  <div class="flex-item">
+    <div class="container theme-card-container">
+      <ul>
+      <h3>Topics</h3>
+        <% @topics.each do |topic| %>
+          <%= link_to topic_path(topic) do %>
+            <div class="theme-card">
+              <div class="theme-photo">
+              </div>
+              <div class="theme-content">
+                <h3><%= topic.title %></h3>
+                <p><%= topic.description.truncate(70) %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </ul>
+  </div>
 
-<br>
+    <div class="flex-item">
+    <h3>Items</h3>
+    </div>
 
-   <footer>
-    <p>&copy; 2023 My Website. All rights reserved.</p>
-  </footer>
+
+  <div class="flex-item">
+    <div class="container calendar-container">
+    <%= image_tag "calendar.png" %>
+    <%= image_tag "calendar.png" %>
+    </div>
+
+  </div>
+
+
 </div>
-</body>
