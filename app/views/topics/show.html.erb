@@ -9,7 +9,7 @@
 
 <div class="theme-card-container">
   <% @items.each do |item| %>
-    <%# link_to topic_path(item) do %>
+    <%= link_to item_path(item) do %>
       <div class="theme-card">
         <div class="theme-photo">
         </div>
@@ -18,7 +18,7 @@
           <p><%= item.description.truncate(70) %></p>
         </div>
       </div>
-    <%# end %>
+    <% end %>
   <% end %>
 </div>
 

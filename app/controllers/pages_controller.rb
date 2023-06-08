@@ -2,9 +2,9 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    @themes = Theme.all.sample(3)
+    @themes = Theme.all
 
-    @topics = Topic.all.sample(5)
+    @topics = Topic.all
 
   end
 

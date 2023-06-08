@@ -1,54 +1,54 @@
 <div class="flex-container">
 
-  <div class="flex-item">
-    <div class="container theme-card-container">
-      <ul>
-      <h3>Themes</h3>
-          <% @themes.each do |theme| %>
-            <%= link_to theme_path(theme) do %>
-              <div class="theme-card">
-                <div class="theme-photo">
-                </div>
-                <div class="theme-content">
-                  <h3><%= theme.title %></h3>
-                  <p><%= theme.description.truncate(70) %></p>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-      </div>
-    </ul>
-  </div>
+  <%# <div class=""> %>
+  <h4 class="h4-home"><strong>Themes</strong></h4>
+    <div class="home-card-container" >
+      <%# <ul> %>
 
-  <div class="flex-item">
-    <div class="container theme-card-container">
-      <ul>
-      <h3>Topics</h3>
+
+      <% @themes.each do |theme| %>
+        <%= link_to theme_path(theme) do %>
+          <div class="home-card" >
+            <div class="home-content" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+              <h3 class="home-theme-title">
+              <%= theme.title %></h3>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <%# </ul> %>
+  <%# </div> %>
+
+  <%# <div class="flex-item"> %>
+        <h4 class="h4-home"><strong>Topics</strong></h4>
+    <div class="home-card-container">
+      <%# <ul> %>
+
         <% @topics.each do |topic| %>
           <%= link_to topic_path(topic) do %>
-            <div class="theme-card">
-              <div class="theme-photo">
+            <div class="home-card">
+              <div class="home-photo">
               </div>
-              <div class="theme-content">
+              <div class="home-content">
                 <h3><%= topic.title %></h3>
-                <p><%= topic.description.truncate(70) %></p>
               </div>
             </div>
           <% end %>
         <% end %>
       </div>
-    </ul>
-  </div>
+    <%# </ul> %>
+  <%# </div> %>
 
     <div class="flex-item">
-    <h3>Items</h3>
+    <h4 class="h4-home"><strong>Items</strong></h4>
     </div>
 
 
   <div class="flex-item">
-    <div class="container calendar-container">
-    <%= image_tag "calendar.png" %>
-    <%= image_tag "calendar.png" %>
+    <div class="calendar-container">
+    <%= image_tag "calendar.png", alt: "calendar", width: 300 %>
+    <%= image_tag "calendar.png", alt: "calendar", width: 300 %>
     </div>
 
   </div>
