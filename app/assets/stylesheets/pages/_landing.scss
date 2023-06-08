@@ -1,0 +1,31 @@
+body.landing-page .sidebar {
+  display: none;
+}
+
+body.landing-page .navbar {
+  display: none;
+}
+
+
+.content .btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #3C96B1;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.content .btn:hover {
+  background-color: #255969;
+}
+
+
+.home-button {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  padding: 18px 18px;
+}
