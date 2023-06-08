@@ -5,6 +5,51 @@
 @import "navbar";
 @import "sidebar";
 
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  text-align: center;
+  padding: 10px 15px;
+  h3 {
+    font-family: "raleway";
+    font-size: 35px;
+    font-weight: bold;
+  }
+  p {
+    font-family: "lato";
+    font-size: 25px;
+    font-style: italic;
+  }
+}
+
+.themes-card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.themes-card {
+  width: 100%;
+
+  .themes-photo img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
 
 .back-btn {
   font-family: "lato";
@@ -16,10 +61,11 @@
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
+  box-shadow: 0;
   // make sure that the content is well centered in the padding!!
   a {
     text-decoration: none;
-    color: white;
+    color: #B5C7CF;
   }
 }
 .topic-heading {
@@ -36,6 +82,7 @@
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
+  margin-bottom: 30px;
   // make sure that the content is well centered in the padding!!
   a {
 

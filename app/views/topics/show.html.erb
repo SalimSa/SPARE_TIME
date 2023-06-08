@@ -7,20 +7,17 @@
   <%= link_to "Add a new item", new_topic_item_path(@topic)%>
 </div>
 
-<div class="theme-card-container">
+<div class="container themes-card-container">
   <% @items.each do |item| %>
-    <%# link_to topic_path(item) do %>
-      <div class="theme-card">
-        <div class="theme-photo">
-        </div>
-        <div class="theme-content">
+    <%= link_to topic_path(item) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path item.photo.key %>)">
           <h3><%= item.title.truncate(25)  %></h3>
           <p><%= item.description.truncate(70) %></p>
         </div>
-      </div>
-    <%# end %>
+    <% end %>
   <% end %>
 </div>
+
 
 <div class="back-btn">
   <%= link_to "Back", theme_path(@topic.theme)%>
