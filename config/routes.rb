@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get '/landing', to: 'pages#landing'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get "profile", to: "pages#profile"
+  get "home", to: "pages#home"
 
   resources :themes do
     resources :topics, only: [:show, :new, :create]
