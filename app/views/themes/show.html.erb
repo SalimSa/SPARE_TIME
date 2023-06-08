@@ -1,0 +1,17 @@
+<h2><%= @theme.title %></h2>
+<h2><%= @theme.description %></h2>
+
+<div class="container theme-card-container">
+  <% @topics.each do |topic| %>
+    <%= link_to topic_path(topic) do %>
+      <div class="theme-card">
+        <div class="theme-photo">
+        </div>
+        <div class="theme-content">
+          <h3><%= topic.title %></h3>
+          <p><%= topic.description.truncate(70) %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

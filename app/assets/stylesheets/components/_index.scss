@@ -4,3 +4,93 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "sidebar";
+
+
+.create-btn {
+  width: 200px;
+  margin-top: 30px;
+  margin-left: 80px;
+  background-color: #3C96B1;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  a {
+    text-decoration: none;
+  }
+}
+
+.theme-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+.theme-card {
+  display: flex;
+  margin-top: 20px;
+  height: 160px;
+}
+
+.theme-content {
+  width: 400px;
+  margin: 10px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  padding: 16px;
+}
+
+.theme-content h3 {
+  font-family: "raleway";
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.theme-content p {
+  font-family: "lato";
+  font-size: 20px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.banner {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+.banner h1{
+  position: absolute;
+  top: 95px;
+  left: 20px;
+  font-family: "raleway";
+  font-weight: bolder;
+  font-size: 110px;
+}
+.banner h3{
+  position: absolute;
+  top:215px;
+  left: 20px;
+  font-family: "lato";
+  font-size: 70px;
+}
+

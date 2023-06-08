@@ -15,6 +15,7 @@ Theme.destroy_all
 User.destroy_all
 
 puts "Creating users..."
+
 user1 = User.create(email: "pierre@gmail.com", password: "123456")
 user2 = User.create(email: "marta@gmail.com", password: "123456")
 user3 = User.create(email: "salim@gmail.com", password: "123456")
