@@ -1,10 +1,14 @@
 
-Hello from the theme index
+
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as1.ftcdn.net/v2/jpg/02/04/89/52/1000_F_204895240_uPTOUaHNOkBAdB4D6HxYhaLFiUBmjocU.jpg)">
+  <h1>SpareTime</h1>
+  <h3>Research made easy!</h3>
+</div> %>
+<%# <div class="create-btn"> %>
+  <%# <% link_to "Add a new theme", new_theme_path %>
+<%# </div> %>
+
 <div class="container">
-  <div class="Banner-show">
-    <h1>SpareTime</h1>
-    <h3>Research made easy!</h3>
-  </div>
 
   <%# SEARCH BAR %>
   <div>
@@ -26,20 +30,6 @@ Hello from the theme index
   </div>
   <%# END SEARCH BAR %>
 
-  <div class="topics-cards">
-    <% @themes.each do |theme| %>
-      <%= theme.title %>
-      <%= theme.description %>
-    <% end %>
-  </div>
-
-<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as1.ftcdn.net/v2/jpg/02/04/89/52/1000_F_204895240_uPTOUaHNOkBAdB4D6HxYhaLFiUBmjocU.jpg)">
-  <h1>SpareTime</h1>
-  <h3>Research made easy!</h3>
-</div> %>
-<%# <div class="create-btn"> %>
-  <%# link_to "Add a new theme", new_theme_path %>
-</div>
 <div class="container theme-card-container">
   <% @themes.each do |theme| %>
     <%= link_to theme_path(theme) do %>

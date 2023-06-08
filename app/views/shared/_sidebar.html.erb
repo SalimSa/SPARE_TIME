@@ -1,10 +1,15 @@
-<div class="sidebar" data-controller="sidebar-dropdown">
-    <% current_user.themes.each do |theme| %>
-    <a class="theme dropdown-btn"  data-sidebar-dropdown-controller-target="dropdown" href=""><%= theme.title%></a>
-     <div class="dropdown-container">
-      <% theme.topics.each do |topic| %>
-       <a class="topic" href=""><%= topic.title%> </a>
+
+
+
+  <% if user_signed_in? %>
+    <div class="sidebar" data-controller="sidebar-dropdown">
+      <% current_user.themes.each do |theme| %>
+      <a class="theme dropdown-btn"  data-sidebar-dropdown-controller-target="dropdown" href=""><%= theme.title%></a>
+      <div class="dropdown-container">
+        <% theme.topics.each do |topic| %>
+        <a class="topic" href=""><%= topic.title%> </a>
+        <% end %>
+      </div>
       <% end %>
     </div>
-    <% end %>
-</div>
+  <% end %>
