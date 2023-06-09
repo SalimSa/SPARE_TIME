@@ -1,27 +1,19 @@
-// .flex-container {
-//   display: flex;
-// }
 
-// .container {
-//   overflow: auto;
-// }
 
 .h4-home {
   color: #3c96b1;
-  text-align: center;
+  text-align: left;
+  font-weight: bolder;
+  font-size: 28px;
+  font-family: "raleway";
+  padding-left: 16px;
+  padding-top: 25px;
+
 }
 
 .home-card-container {
   display: flex;
-  // width: 50%;
-  // overflow: auto;
-  //   grid-template-columns: repeat(3, 1fr);
   flex-wrap: wrap;
-
-  //   a {
-  //     text-decoration: none;
-  //     color: black;
-  //   }
 }
 
 .home-card {
@@ -39,13 +31,33 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 24px;
+  font-size: 35px;
   font-weight: bolder;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-h3.home-theme-title {
+.my-events {
+  color: #3c96b1;
   text-align: center;
+  font-weight: bolder;
+  font-size: 28px;
+  font-family: "raleway";
+  padding-left: 16px;
+  padding-top: 30px;
 }
+
+.tasks {
+  display: flex;
+  justify-content: space-around;
+}
+
+.task-card {
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow:  0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+

@@ -1,27 +1,48 @@
 <div class="flex-container">
+  <div class="flex-item">
+    <h4 class="h4-home">My favourite themes</h4>
 
-  <%# <div class=""> %>
-  <h4 class="h4-home"><strong>Themes</strong></h4>
-
-  <div class="container themes-card-container">
-    <% @themes.each do |theme| %>
-      <%= link_to theme_path(theme) do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path theme.photo.key %>)">
-          <h3><%= theme.title.truncate(20) %></h3>
-          <p><%= theme.description.truncate(70) %></p>
-        </div>
+    <div class="container themes-card-container">
+      <% @themes.order(:title).each do |theme| %>
+        <%= link_to theme_path(theme) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path theme.photo.key %>)">
+            <h3><%= theme.title.truncate(20) %></h3>
+            <p><%= theme.description.truncate(70) %></p>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
+</div>
 
+<div class="flex-container tasks">
+  <div class="flex-item">
+    <h4 class="my-events">My events</h4>
+      <div class="calendar-container">
+        <%= image_tag "calendar.png", alt: "calendar", width: 300 %>
+      </div>
+  </div>
 
   <div class="flex-item">
-    <div class="calendar-container">
-    <%= image_tag "calendar.png", alt: "calendar", width: 300 %>
-    <%= image_tag "calendar.png", alt: "calendar", width: 300 %>
-    </div>
-
+    <h4 class="my-events">My tasks</h4>
+      <div class="task-card">
+      <h5>Barcelona:</h5>
+        <p>
+          <li>Book restaurant</li>
+          <li>Tickets for El Liceo</li>
+        </p>
+      <h5>Le Wagon:</h5>
+        <p>
+          <li>Watch again Stimulus lesson</li>
+          <li>Watch again APIS's lesson</li>
+          <li>Flashcaaaaaaards!!!!</li>
+        </p>
+      </div>
   </div>
 
+  <div class="flex-item">
+    <h4 class="my-events">Collaborations</h4>
+    <p>No new collaborations</p>
+  </div>
 
 </div>
