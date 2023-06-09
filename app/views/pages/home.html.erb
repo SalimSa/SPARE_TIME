@@ -31,33 +31,38 @@
 </div>
 
 <div class="flex-container tasks">
-  <div class="flex-item">
+
+  <div class="flex-item w-25">
     <h4 class="my-events">My events</h4>
       <div class="calendar-container">
-        <%= image_tag "calendar.png", alt: "calendar", width: 300 %>
+        <%= image_tag "calendar.png", alt: "calendar", width: "100%" %>
       </div>
   </div>
 
-  <div class="flex-item">
+  <div class="flex-item w-25">
     <h4 class="my-events">My tasks</h4>
       <div class="task-card">
-      <h5>Barcelona:</h5>
-        <p>
-          <li>Book restaurant</li>
-          <li>Tickets for El Liceo</li>
-        </p>
-      <h5>Le Wagon:</h5>
+        <h5>Le Wagon:</h5>
         <p>
           <li>Watch again Stimulus lesson</li>
           <li>Watch again APIS's lesson</li>
           <li>Flashcaaaaaaards!!!!</li>
         </p>
       </div>
+      <div class="task-card">
+        <h5>Barcelona:</h5>
+        <p>
+          <li>Book restaurant</li>
+          <li>Tickets for El Liceo</li>
+        </p>
+      </div>
   </div>
 
-  <div class="flex-item">
+  <div class="flex-item w-25">
     <h4 class="my-events">Collaborations</h4>
-    <p>No new collaborations</p>
+    <div class="task-card">
+        <p>No new collaborations</p>
+      </div>
   </div>
 
 </div>
