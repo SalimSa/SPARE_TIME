@@ -1,3 +1,53 @@
-<h1>PROFILEEEEEEEEEEEEEEEEEEEEEEEE 🚀</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Profile Page</h1>
+  </header>
 
-<p>Now is <%= Time.now %></p>
+  <div class="profile">
+    <div class="profile-image">
+         <%= image_tag "https://avatars.githubusercontent.com/u/35274956?v=4"%>
+    </div>
+    <div class="profile-info">
+      <h2></h2>
+      <p> <%="Marta" %></p>
+      <p>Email: <%=current_user.email %></p>
+      <p>Location: <% if current_user.location %><%= current_user.location %><% else %> Bolivia's Salar de Uyuni <% end %></p>
+      <p>Occupation: Web Developer</p>
+    </div>
+  </div>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>"Hi there! I'm an aspiring superhero by day and a professional nap-taker by night. My hobbies include eating pizza, making terrible puns, and avoiding adult responsibilities. I firmly believe that laughter is the best medicine, especially when it comes to embarrassing dance moves. If you need someone to lighten the mood or bring the party, I'm your go-to person. Just be warned, I come with a lifetime supply of dad jokes and a contagious giggle. Let's embrace the silliness and have a laugh-filled adventure together!"</p>
+  </section>
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br><br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br><br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <footer>
+
+  <br>
+    <p>&copy; 2023 SpareTime. All rights reserved.</p>
+  </footer>
+</body>
+</html>
