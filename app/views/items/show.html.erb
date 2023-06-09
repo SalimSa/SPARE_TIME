@@ -1,4 +1,52 @@
 <div class="container">
-  <h1><%= @item.title %></h1>
-  <h2><%= @item.description %></h2>
+  <div class="item-name">
+    <h1><%= @item.title %></h1>
+  </div>
+  <div class="component-title">
+    <h3>Notepad</h3>
+  </div>
+  <div class="show-text">
+    <% @texts.each do |text| %>
+      <p><%= text.paragraph %></p>
+    <% end  %>
+  </div>
+  <div class="text-form">
+    <%= simple_form_for [@item, @text] do |f| %>
+      <%= f.input :paragraph, placeholder: "write here..." %>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <div class="component-title">
+    <h3>Links</h3>
+  </div>
+  <div class="show-url">
+    <% @links.each do |link| %>
+    <% object = LinkThumbnailer.generate("http://" + link.url) %>
+    <div class="link-gem-container">
+      <%= image_tag object.images.first.src.to_s, alt: "link image", width: 200 %>
+      <div class="link-gem">
+        <h3><%= object.title %></h3>
+        <p><%= object.description %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+
+  <div class="link-form">
+    <%= simple_form_for [@item, @link] do |f| %>
+      <%= f.input :url, placeholder: "www.hello.com" %>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <div class="component-title">
+    <h3>Task list</h3>
+  </div>
+
+  <div class="back-btn">
+    <%= link_to "Back", topic_path%>
+  </div>
+
+
 </div>
