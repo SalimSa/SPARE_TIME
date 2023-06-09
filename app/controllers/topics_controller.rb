@@ -50,8 +50,6 @@ class TopicsController < ApplicationController
     params.require(:topic).permit(:title, :description, :photo)
   end
 
-  # def item_params
-  #   params.require(:item).permit(:title, :description, :photo)
-  # end
+ 
 
 end
