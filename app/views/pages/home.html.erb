@@ -2,47 +2,17 @@
 
   <%# <div class=""> %>
   <h4 class="h4-home"><strong>Themes</strong></h4>
-    <div class="home-card-container" >
-      <%# <ul> %>
 
-
-      <% @themes.each do |theme| %>
-        <%= link_to theme_path(theme) do %>
-          <div class="home-card" >
-            <div class="home-content" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-              <h3 class="home-theme-title">
-              <%= theme.title %></h3>
-            </div>
-          </div>
-        <% end %>
+  <div class="container themes-card-container">
+    <% @themes.each do |theme| %>
+      <%= link_to theme_path(theme) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path theme.photo.key %>)">
+          <h3><%= theme.title.truncate(20) %></h3>
+          <p><%= theme.description.truncate(70) %></p>
+        </div>
       <% end %>
-    </div>
-    <%# </ul> %>
-  <%# </div> %>
-
-  <%# <div class="flex-item"> %>
-        <h4 class="h4-home"><strong>Topics</strong></h4>
-    <div class="home-card-container">
-      <%# <ul> %>
-
-        <% @topics.each do |topic| %>
-          <%= link_to topic_path(topic) do %>
-            <div class="home-card">
-              <div class="home-photo">
-              </div>
-              <div class="home-content">
-                <h3><%= topic.title %></h3>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    <%# </ul> %>
-  <%# </div> %>
-
-    <div class="flex-item">
-    <h4 class="h4-home"><strong>Items</strong></h4>
-    </div>
+    <% end %>
+  </div>
 
 
   <div class="flex-item">
