@@ -10,9 +10,16 @@ require "open-uri"
 puts "Cleaning database..."
 # Component.destroy_all
 # Collaboration.destroy_all
+Component.destroy_all
+LinkComponent.destroy_all
+TextComponent.destroy_all
+Collaboration.destroy_all
 Item.destroy_all
+puts "1"
 Topic.destroy_all
+puts "2"
 Theme.destroy_all
+puts "3"
 User.destroy_all
 
 file_one = URI.open("https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60")

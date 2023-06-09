@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  # before_action :set_topic, only: [:show]
+  before_action :set_topic, only: [:create]
 
   def index
     @items = Item.all
@@ -9,26 +9,28 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     # @components = @item.components
     @text = TextComponent.new
-    @texts = TextComponent.all
+    @texts = TextComponent.where(item: @item)
 
     @link = LinkComponent.new
-    @links = LinkComponent.all
+    @links = LinkComponent.where(item: @item)
+    @topic = @item.topic
     # @hope = LinkThumbnailer.generate('http://stackoverflow.com')
   end
 
-  # def new
-  #   @item = Item.new
-  # end
+  def new
+    @item = Item.new
+    @topic = Topic.find(params[:topic_id])
+  end
 
-  # def create
-  #   @item = Item.new(item_params)
-  #   @item.topic = @topic
-  #   if @topic.save
-  #     redirect_to topic_path(@topic)
-  #   else
-  #     render :new, status: :unprocessable_entity
-  #   end
-  # end
+  def create
+    @item = Item.new(item_params)
+    @item.topic = @topic
+    if @item.save!
+      redirect_to item_path(@item)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   # def edit
   # end
@@ -52,7 +54,7 @@ class ItemsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
   end
 
-  # def item_params
-  #   params.require(:item).permit(:title, :description, :photo)
-  # end
+  def item_params
+    params.require(:item).permit(:title, :description, :photo)
+  end
 end
