@@ -24,7 +24,7 @@
     <% @links.each do |link| %>
     <% object = LinkThumbnailer.generate("http://" + link.url) %>
     <div class="link-gem-container">
-      <%= image_tag object.images.first.src.to_s, alt: "link image", width: 200 %>
+        <%= image_tag object.images.first.src.to_s, alt: "link image", width: 200 %>
       <div class="link-gem">
         <h3><%= object.title %></h3>
         <p><%= object.description %></p>
@@ -45,7 +45,7 @@
   </div>
 
   <div class="back-btn">
-    <%= link_to "Back", topic_path%>
+    <%= link_to "Back", topic_path(@topic)%>
   </div>
 
 
