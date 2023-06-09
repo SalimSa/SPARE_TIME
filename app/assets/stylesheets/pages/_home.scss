@@ -1,7 +1,51 @@
+// .flex-container {
+//   display: flex;
+// }
 
-.flex-container {
-  display: flex;
+// .container {
+//   overflow: auto;
+// }
+
+.h4-home {
+  color: #3c96b1;
+  text-align: center;
 }
 
+.home-card-container {
+  display: flex;
+  // width: 50%;
+  // overflow: auto;
+  //   grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
 
+  //   a {
+  //     text-decoration: none;
+  //     color: black;
+  //   }
+}
 
+.home-card {
+  display: flex;
+  margin-top: 20px;
+  height: 160px;
+}
+
+.home-content {
+  background-size: cover;
+  background-position: center;
+  height: 100px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bolder;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+h3.home-theme-title {
+  text-align: center;
+}

@@ -1,3 +1,5 @@
+class ItemsController < ApplicationController
+  # before_action :set_topic, only: [:new, :show, :edit, :update, :destroy, :create]
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:new, :create]
 
@@ -21,7 +23,7 @@ class TopicsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @components = @item.components
+    @components = @item.components    
   end
 
   # def edit
@@ -42,8 +44,8 @@ class TopicsController < ApplicationController
 
 
   private
-  def set_topic
-    @topic = Topic.find(params[:topic_id])
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 
   def item_params

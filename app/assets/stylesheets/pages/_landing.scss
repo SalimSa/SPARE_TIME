@@ -1,31 +1,77 @@
 body.landing-page .sidebar {
   display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 body.landing-page .navbar {
   display: none;
 }
 
+  .landing-page {
+    font-family: "Work Sans", "Helvetica", "sans-serif";
+  }
 
-.content .btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #3C96B1;
-  color: #fff;
-  font-size: 20px;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  .landing-page {
+    font-family: "Work Sans", "Helvetica", "sans-serif";
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content .btn {
+    padding: 12px 24px;
+    background-color: #3C96B1;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .content .btn:hover {
+    background-color: #255969;
+  }
+
+
+.home-headline {
+  text-align: center;
+  color: white;
+  font-size: 120px;
+  font-weight: bolder;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  padding-top: 56px;
+
 }
 
-.content .btn:hover {
-  background-color: #255969;
+.home-sub-headline {
+  text-align: center;
+  color:white;
+  font-size: 40px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 
-.home-button {
-  position: absolute;
-  top: 25px;
-  right: 20px;
-  padding: 18px 18px;
+.footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  margin: 0 10px;
 }
