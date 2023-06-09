@@ -5,6 +5,65 @@
 @import "navbar";
 @import "sidebar";
 
+h1 h2 h3 {
+  font-family: "raleway";
+}
+h4 h5 h6 p {
+  font-family: "lato";
+}
+
+.link-gem-container {
+  overflow: hidden;
+  height: 170px;
+  width: 1200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  // padding: 16px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+.link-gem-container img {
+  height: 100%;
+  width: 170px;
+  object-fit: cover;
+}
+
+.link-gem h3{
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.link-gem p {
+  font-size: 20px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  margin-left: 15px;
+}
+
+.text-component {
+  padding: 200px;
+  background-color: #3C96B1;
+  height: 200px;
+  width: 200px;
+  border: 2px solid #000;
+}
+
+.component-title {
+  margin-top: 20px;
+}
+
+.item-name {
+  padding-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+  margin-top: 20px;
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -62,6 +121,7 @@
   border-radius: 5px;
   box-sizing: border-box;
   box-shadow: 0;
+  margin-bottom: 20px;
   // make sure that the content is well centered in the padding!!
   a {
     text-decoration: none;

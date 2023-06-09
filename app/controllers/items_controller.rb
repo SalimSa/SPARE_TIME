@@ -7,7 +7,13 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @components = @item.components
+    # @components = @item.components
+    @text = TextComponent.new
+    @texts = TextComponent.all
+
+    @link = LinkComponent.new
+    @links = LinkComponent.all
+    # @hope = LinkThumbnailer.generate('http://stackoverflow.com')
   end
 
   # def new
