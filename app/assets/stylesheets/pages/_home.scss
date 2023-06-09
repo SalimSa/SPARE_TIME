@@ -49,3 +49,25 @@
 h3.home-theme-title {
   text-align: center;
 }
+
+.theme-search-submit {
+  background-color: #3c96b1;
+  color: #FFFFFF;
+  border: none;
+  margin-right: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "LEGO", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.search-bar {
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 25px;
+  padding: 5px, 10px;
+  width:300px
+}

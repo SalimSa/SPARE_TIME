@@ -1,12 +1,7 @@
 <div class="flex-container">
-
-  <%# <div class=""> %>
   <h4 class="h4-home"><strong>Themes</strong></h4>
     <div class="home-card-container" >
-      <%# <ul> %>
-
-
-      <% @themes.each do |theme| %>
+      <% @themes.order(:title).each do |theme| %>
         <%= link_to theme_path(theme) do %>
           <div class="home-card" >
             <div class="home-content" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
@@ -17,15 +12,23 @@
         <% end %>
       <% end %>
     </div>
-    <%# </ul> %>
-  <%# </div> %>
 
-  <%# <div class="flex-item"> %>
-        <h4 class="h4-home"><strong>Topics</strong></h4>
+<%# search bar %>
+      <div class="theme-search-form">
+        <%= form_with url: home_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a theme"
+          %>
+          <%= submit_tag "Search", class: "theme-search-submit" %>
+        <% end %>
+      </div>
+      <%# search bar %>
+
+  <h4 class="h4-home"><strong>Topics</strong></h4>
     <div class="home-card-container">
-      <%# <ul> %>
-
-        <% @topics.each do |topic| %>
+        <% @topics.order(:title).each do |topic| %>
           <%= link_to topic_path(topic) do %>
             <div class="home-card">
               <div class="home-photo">
@@ -37,8 +40,6 @@
           <% end %>
         <% end %>
       </div>
-    <%# </ul> %>
-  <%# </div> %>
 
     <div class="flex-item">
     <h4 class="h4-home"><strong>Items</strong></h4>

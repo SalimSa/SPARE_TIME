@@ -3,13 +3,11 @@ class ThemesController < ApplicationController
 
   def index
     # search bar
-    if params[:query].present?
-      @themes = Theme.where(title: params[:query])
-    else
+    if params[:query].nil? || params[:query] == ''
       @themes = Theme.all
+    else
+      @themes = Theme.search_by_title_and_description(params[:query])
     end
-    # end of search bar
-
     @themes = Theme.all
   end
 
