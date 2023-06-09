@@ -1,30 +1,28 @@
 class ItemsController < ApplicationController
-  # before_action :set_topic, only: [:new, :show, :edit, :update, :destroy, :create]
-class TopicsController < ApplicationController
-  before_action :set_topic, only: [:new, :create]
+  # before_action :set_topic, only: [:show]
 
   def index
     @items = Item.all
   end
 
-  def new
-    @item = Item.new
-  end
-
-  def create
-    @item = Item.new(item_params)
-    @item.topic = @topic
-    if @topic.save
-      redirect_to topic_path(@topic)
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
   def show
     @item = Item.find(params[:id])
-    @components = @item.components    
+    @components = @item.components
   end
+
+  # def new
+  #   @item = Item.new
+  # end
+
+  # def create
+  #   @item = Item.new(item_params)
+  #   @item.topic = @topic
+  #   if @topic.save
+  #     redirect_to topic_path(@topic)
+  #   else
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
 
   # def edit
   # end
@@ -44,12 +42,11 @@ class TopicsController < ApplicationController
 
 
   private
-  def set_item
-    @item = Item.find(params[:item_id])
+  def set_topic
+    @topic = Topic.find(params[:topic_id])
   end
 
-  def item_params
-    params.require(:item).permit(:title, :description, :photo)
-  end
-
+  # def item_params
+  #   params.require(:item).permit(:title, :description, :photo)
+  # end
 end
