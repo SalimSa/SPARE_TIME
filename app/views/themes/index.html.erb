@@ -1,31 +1,5 @@
 
-
-<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://as1.ftcdn.net/v2/jpg/02/04/89/52/1000_F_204895240_uPTOUaHNOkBAdB4D6HxYhaLFiUBmjocU.jpg)">
-  <h1>SpareTime</h1>
-  <h3>Research made easy!</h3>
-</div> %>
-
 <div class="container">
-
-  <%# SEARCH BAR %>
-  <div>
-    <%= form_with url: themes_path, method: :get, class: "d-flex" do %>
-      <div class="input-group">
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a theme",
-          aria_label: "Search for a theme"
-        %>
-        <div class="input-group-append">
-          <button name="button" type="submit" class="btn btn-flat">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <%# END SEARCH BAR %>
 
 <div class="create-btn">
   <%= link_to "Add a new theme", new_theme_path%>

@@ -2,15 +2,15 @@
 
 <% if user_signed_in? %>
   <div class="sidebar" >
-    <% current_user.themes.each do |theme| %>
+    <% current_user.themes.order(:title).each do |theme| %>
       <div class="theme-container" data-controller="sidebar-dropdown">
         <a class="theme dropdown-btn"  data-action="click->sidebar-dropdown#toggleDropdownTopics" href=""><%= theme.title%></a>
         <div class="dropdown-container hidden" data-sidebar-dropdown-target="topicsDropdown">
-          <% theme.topics.each do |topic| %>
+          <% theme.topics.order(:title).each do |topic| %>
             <a class="topic" href="" data-action="click->sidebar-dropdown#toggleDropdownItems"><%= topic.title%> </a>
 
             <div class="hidden" data-sidebar-dropdown-target="itemsDropdown">
-              <% topic.items.each do |item| %>
+              <% topic.items.order(:title).each do |item| %>
                 <%= link_to item.title, item_path(item), class: 'item'%>
               <% end %>
             </div>
