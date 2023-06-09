@@ -1,15 +1,25 @@
 <body class="landing-page">
-  <div class="content">
-    <div class="home-button">
-      <%= link_to root_path, class: "btn" do %>
-        Home
-      <% end %> <!-- Link back to the home page -->
+  <div class="flex-container">
+    <div class="content">
+
+      <div class="flex-item">
+        <h1 class="home-headline">Spare Time</h1>
+        <div class="home-sub-headline"><p>Researching made easy</p></div>
+      </div>
+
+      <div class="button-container">
+        <div class="home-button">
+          <%= link_to "MY HOME", home_path, class: "btn"%>
+        </div>
+        <div class="flex-item">
+          <%= link_to "New theme", new_theme_path, class: "btn"%>
+        </div>
+      </div>
     </div>
-    <h1>Welcome to the Landing Page</h1>
-    <footer>
-      <p>&copy; 2023 My Website. All rights reserved.</p>
-    </footer>
   </div>
 
+  <footer class="footer">
+    <p>&copy; 2023 My Website. All rights reserved.</p>
+  </footer>
 
 </body>
