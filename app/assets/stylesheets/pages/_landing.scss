@@ -73,8 +73,14 @@ body.landing-page .navbar {
 .button-container {
   display: flex;
   justify-content: center;
+  padding-top: 30px;
 }
 
 .btn {
   margin: 0 10px;
+}
+
+
+.content {
+  padding-bottom: 30px;
 }
