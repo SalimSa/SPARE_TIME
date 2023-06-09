@@ -22,24 +22,23 @@ class ComponentsController < ApplicationController
   def show
     @item = Item.new
     @components = Component.all
-
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    if @component.update(component_params)
-      redirect_to component_path(@component)
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @component.update(component_params)
+  #     redirect_to component_path(@component)
+  #   else
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
 
-  def destroy
-    @component.destroy
-    redirect_to components_path, status: :see_other
-  end
+  # def destroy
+  #   @component.destroy
+  #   redirect_to components_path, status: :see_other
+  # end
 
   private
   def set_component
