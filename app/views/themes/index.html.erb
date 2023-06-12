@@ -6,12 +6,22 @@
 </div>
 
 <div class="container themes-card-container">
-<% @themes.each do |theme| %>
-  <%= link_to theme_path(theme) do %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(theme.photo.key) if theme.photo.key.present? %>)">
-      <h3><%= theme.title.truncate(20) %></h3>
-      <p><%= theme.description.truncate(70) %></p>
-    </div>
+  <% @themes.each do |theme| %>
+    <%= link_to theme_path(theme) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(theme.photo.key) if theme.photo.key.present? %>)">
+        <h3><%= theme.title.truncate(20) %></h3>
+        <p><%= theme.description.truncate(70) %></p>
+        <% if theme.favorite? %>
+          <%= link_to unfavorite_theme_path(theme), method: :patch, class: "favorite-link" do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to favorite_theme_path(theme), method: :patch, class: "favorite-link" do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
 </div>
+

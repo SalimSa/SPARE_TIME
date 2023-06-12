@@ -2,26 +2,33 @@
   <h2><%= @theme.title %></h2>
   <h3><%= @theme.description %></h3>
 
-<div class="create-btn">
-  <%= link_to "Add a new topic", new_theme_topic_path(@theme)%>
-</div>
+  <div class="create-btn">
+    <%= link_to "Add a new topic", new_theme_topic_path(@theme) %>
+  </div>
 
-<div class=" themes-card-container">
-  <% @topics.each do |topic| %>
-    <%= link_to topic_path(topic) do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(topic.photo.key) if topic.photo.key.present? %>)">
-        <h3><%= topic.title.truncate(20) %></h3>
-        <p><%= topic.description.truncate(70) %></p>
-      </div>
-    <% end %>
+  <div class="favorite-btn">
+  <% if @theme.favorite %>
+    <%= link_to "Unfavorite", unfavorite_theme_path(@theme), method: :patch %>
+  <% else %>
+    <%= link_to "Favorite", favorite_theme_path(@theme), method: :patch %>
   <% end %>
 </div>
 
 
+  <div class="themes-card-container">
+    <% @topics.each do |topic| %>
+      <%= link_to topic_path(topic) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(topic.photo.key) if topic.photo.key.present? %>)">
+          <h3><%= topic.title.truncate(20) %></h3>
+          <p><%= topic.description.truncate(70) %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
-<div class="back-btn">
-  <%= link_to "Back", themes_path%>
+  <div class="back-btn">
+    <%= link_to "Back", themes_path %>
+  </div>
+
+
 </div>
-
-</div>
-

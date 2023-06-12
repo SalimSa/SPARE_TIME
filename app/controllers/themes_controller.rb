@@ -1,6 +1,18 @@
 class ThemesController < ApplicationController
   before_action :set_theme, only: [:show, :edit, :update, :destroy]
 
+  def favorite
+    theme = Theme.find(params[:id])
+    theme.update(favorite: true)
+    redirect_to themes_path, notice: "Theme added to favorites."
+  end
+
+  def unfavorite
+    theme = Theme.find(params[:id])
+    theme.update(favorite: false)
+    redirect_to themes_path, notice: "Theme removed from favorites."
+  end
+
   def index
     @themes = Theme.all
   end
