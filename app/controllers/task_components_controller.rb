@@ -9,6 +9,12 @@ class TaskComponentsController < ApplicationController
     redirect_to item_path(@item)
   end
 
+  def update
+    @task = TaskComponent.find(params[:id])
+    @task.update(task_params)
+    redirect_to item_path(@task.item)
+  end
+
   private
 
   def task_params
