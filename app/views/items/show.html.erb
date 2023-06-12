@@ -40,15 +40,41 @@
       <%= f.submit class: "btn btn-primary" %>
     <% end %>
 
-    <%= simple_form_for [@item, @location] do |f| %>
-      <%= f.input :name, placeholder: "eg. Restaurants" %>
-      <%= f.input :address, placeholder: "123, Abbey Road" %>
-      <%= f.submit class: "btn btn-primary" %>
-    <% end %>
   </div>
 
   <div class="component-title">
     <h3>Task list</h3>
+  </div>
+
+  <ul class="show-text">
+    <% @tasks.each do |task| %>
+      <li>
+        <% if task.completed? %>
+          <i class="fa-regular fa-square-check"></i>
+        <% else %>
+          <i class="fa-regular fa-square"></i>
+        <% end %>
+        <strong><%= task.title %></strong> - <%= task.details %>
+        <%# link_to task_path(task.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{task.title}?"} do %>
+          <%# <i class="fa-regular fa-trash-can"></i> %>
+        <%# end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="task-form">
+    <%= simple_form_for [@item, @task] do |f| %>
+      <div class="form-group">
+        <%= f.input :title, class: 'form-control', placeholder: "Grocery shopping..." %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :details, class: 'form-control', placeholder: "Milk, Chicken..." %>
+      </div>
+
+
+      <%= f.submit class: 'btn btn-primary mt-3' %>
+    <% end %>
   </div>
 
   <div class="component-title">
@@ -62,6 +88,7 @@
       <%= f.submit class: "btn btn-primary" %>
     <% end %>
   </div>
+
 
   <div class="map-container">
     <div class="map-box" style="width: 100%; height: 400px;"

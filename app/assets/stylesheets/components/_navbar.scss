@@ -2,12 +2,18 @@
 
 .navbar-sparetime {
   justify-content: space-between;
-  background: #3C96B1;
+  background-color:#222222;
 }
 
 .navbar-sparetime .nav-item>a {
   color: white;
+  font-size: 1.2rem;
   font-family: "Work Sans", "Helvetica", "sans-serif";
+  box-shadow: inset 0 0 0 1px #ff4d4d;
+  padding: 0.5rem 1.25rem 0.35rem;
+  font-size: .875rem;
+  margin: 3px;
+  border-radius: 0.25rem;
 }
 
 .navbar-sparetime .navbar-collapse {
@@ -16,4 +22,11 @@
 
 .navbar-sparetime .navbar-brand img {
   width: 40px;
+}
+
+.navbar-logo {
+  width: 150px;
+
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

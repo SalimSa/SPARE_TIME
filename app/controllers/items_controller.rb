@@ -14,6 +14,11 @@ class ItemsController < ApplicationController
     @link = LinkComponent.new
     @links = LinkComponent.where(item: @item)
     @topic = @item.topic
+
+    @task = TaskComponent.new
+    @tasks = TaskComponent.where(item: @item)
+
+
     # @hope = LinkThumbnailer.generate('http://stackoverflow.com')
 
     # MAP ---------
