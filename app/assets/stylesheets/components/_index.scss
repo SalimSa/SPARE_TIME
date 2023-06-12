@@ -5,6 +5,16 @@
 @import "navbar";
 @import "sidebar";
 
+.task-form {
+  font-family: "raleway";
+}
+
+ul {
+  list-style: none;
+  font-size: 25px;
+  font-family: "lato";
+}
+
 h1 h2 h3 {
   font-family: "raleway";
 }
@@ -56,6 +66,7 @@ h4 h5 h6 p {
 
 .component-title {
   margin-top: 20px;
+  font-family: "raleway";
 }
 
 .item-name {

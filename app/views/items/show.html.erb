@@ -40,9 +40,42 @@
       <%= f.submit class: "btn btn-primary" %>
     <% end %>
   </div>
+
   <div class="component-title">
     <h3>Task list</h3>
   </div>
+
+  <ul class="show-text">
+    <% @tasks.each do |task| %>
+      <li>
+        <% if task.completed? %>
+          <i class="fa-regular fa-square-check"></i>
+        <% else %>
+          <i class="fa-regular fa-square"></i>
+        <% end %>
+        <strong><%= task.title %></strong> - <%= task.details %>
+        <%# link_to task_path(task.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{task.title}?"} do %>
+          <%# <i class="fa-regular fa-trash-can"></i> %>
+        <%# end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="task-form">
+    <%= simple_form_for [@item, @task] do |f| %>
+      <div class="form-group">
+        <%= f.input :title, class: 'form-control', placeholder: "Grocery shopping..." %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :details, class: 'form-control', placeholder: "Milk, Chicken..." %>
+      </div>
+
+
+      <%= f.submit class: 'btn btn-primary mt-3' %>
+    <% end %>
+  </div>
+
 
   <div class="back-btn">
     <%= link_to "Back", topic_path(@topic)%>

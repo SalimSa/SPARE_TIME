@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'taskcomponents/create'
   get 'link_components/create'
   devise_for :users
   root to: "pages#landing"
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   resources :items, only: [:show, :edit, :update, :destroy] do
     resources :text_components, only: [:new, :create]
     resources :link_components, only: [:new, :create]
+    resources :task_components, only: [:new, :create]
   end
 
   resources :text_components, only: [:destroy]
