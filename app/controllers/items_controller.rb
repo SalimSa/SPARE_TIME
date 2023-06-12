@@ -18,6 +18,13 @@ class ItemsController < ApplicationController
     @task = TaskComponent.new
     @tasks = TaskComponent.where(item: @item)
 
+    # start_date = params.fetch(:start_date, Date.today).to_date
+    # @calendars = CalendarComponent.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+
+    # @calendar = CalendarComponent.new
+    # @calendars = CalendarComponent.where(item: @item)
+
+
 
     # @hope = LinkThumbnailer.generate('http://stackoverflow.com')
 

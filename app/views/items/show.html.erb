@@ -44,14 +44,13 @@
     <h3 class="component-title">Task list</h3>
     <ul class="show-text">
       <% @tasks.each do |task| %>
-        <li>
-          <% if task.completed? %>
-            <i class="far fa-check-square"></i>
-          <% else %>
-            <i class="far fa-square"></i>
-          <% end %>
-          <strong><%= task.title %></strong> - <%= task.details %>
-        </li>
+
+        <%= simple_form_for [@item, task] do |f| %>
+          <div class="d-flex align-items-center justify-content-start">
+            <%= f.input :completed, as: :boolean, label: false, class: 'form-control', input_html: { onchange: "this.form.submit()" } %>
+            <%= task.title %></strong> - <%= task.details %>
+          </div>
+        <% end %>
       <% end %>
     </ul>
     <div class="task-form">
@@ -85,6 +84,15 @@
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
+  <%# <div class="calendar-container">
+    <%# week_calendar(number_of_weeks: 2) do |date| %>
+      <%# date %>
+    <%# end %>
+  <%# </div> %>
+<%= month_calendar(attribute: :starts_at) do |date| %>
+  <%= date %>
+<% end %>
+
 
   <div class="back-btn">
     <%= link_to "Back", topic_path(@topic) %>
