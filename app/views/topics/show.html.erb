@@ -1,29 +1,30 @@
 <div class="container topic-heading">
   <h2><%= @topic.title %></h2>
   <h2><%= @topic.description %></h2>
-</div>
 
-<div class="create-btn">
-  <%= link_to "Add a new item", new_topic_item_path(@topic, @item)%>
-</div>
+  <div class="create-btn">
+    <%= link_to "Add a new item", new_topic_item_path(@topic, @item)%>
+  </div>
 
 
-<div class="container themes-card-container">
-  <% @items.each do |item| %>
-    <%= link_to item_path(item) do %>
-      <% if item.photo.attached? %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path item.photo.key %>)">
-      <% else %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_tag "banner.jpg" %>)">
+  <div class=" themes-card-container">
+    <% @items.each do |item| %>
+      <%= link_to item_path(item) do %>
+        <% if item.photo.attached? %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path item.photo.key %>)">
+        <% else %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_tag "banner.jpg" %>)">
+        <% end %>
+          <h3><%= item.title.truncate(25)  %></h3>
+          <p><%= item.description.truncate(70) %></p>
+        </div>
       <% end %>
-        <h3><%= item.title.truncate(25)  %></h3>
-        <p><%= item.description.truncate(70) %></p>
-      </div>
     <% end %>
-  <% end %>
-</div>
+  </div>
 
 
-<div class="back-btn">
-  <%= link_to "Back", theme_path(@topic.theme)%>
+  <div class="back-btn">
+    <%= link_to "Back", theme_path(@topic.theme)%>
+  </div>
+
 </div>
