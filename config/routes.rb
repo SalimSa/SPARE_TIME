@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :text_components, only: [:new, :create]
     resources :link_components, only: [:new, :create]
     resources :task_components, only: [:new, :create, :update]
-    resources :calendar_components, only: [:new, :create]
+    resources :calendar_components, only: [:new, :create, :update]
     resources :locations, only: [:create]
   end
 

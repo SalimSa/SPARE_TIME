@@ -66,7 +66,6 @@
     </div>
   </div>
 
-
   <div class="component">
     <h3 class="component-title">Location</h3>
     <div class="link-form">
@@ -84,15 +83,23 @@
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-  <%# <div class="calendar-container">
-    <%# week_calendar(number_of_weeks: 2) do |date| %>
-      <%# date %>
-    <%# end %>
-  <%# </div> %>
-<%= month_calendar(attribute: :starts_at) do |date| %>
-  <%= date %>
-<% end %>
 
+  <h3 class="component-title">Create events:</h3>
+  <div class="calendar-form">
+    <div class="event-display">
+      <% @calendars.each do |calendar| %>
+        <%= calendar.name %>
+        <%= calendar.start_time %>
+      <% end %>
+    </div>
+    <%= simple_form_for [@item, @calendar] do |f| %>
+      <div class="input-group">
+        <%= f.input :start_time, label: "Date:" %>
+      </div>
+      <%= f.input :name, label: "Event description:"%>
+      <%= f.button :submit, class: "button btn btn-danger text-white w-100", value: "Create event" %>
+    <% end %>
+  </div>
 
   <div class="back-btn">
     <%= link_to "Back", topic_path(@topic) %>
