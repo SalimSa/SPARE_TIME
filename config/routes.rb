@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :text_components, only: [:new, :create]
     resources :link_components, only: [:new, :create]
     resources :task_components, only: [:new, :create]
+    resources :locations, only: [:create]
   end
 
   resources :text_components, only: [:destroy]

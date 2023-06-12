@@ -81,6 +81,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_12_103747) do
     t.index ["item_id"], name: "index_link_components_on_item_id"
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_locations_on_item_id"
+  end
+
   create_table "task_components", force: :cascade do |t|
     t.string "title"
     t.text "details"
@@ -137,6 +148,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_12_103747) do
   add_foreign_key "components", "items"
   add_foreign_key "items", "topics"
   add_foreign_key "link_components", "items"
+  add_foreign_key "locations", "items"
   add_foreign_key "task_components", "items"
   add_foreign_key "text_components", "items"
   add_foreign_key "themes", "users"
