@@ -1,6 +1,6 @@
 .sidebar {
   // position: fixed;
-  height: 1200px;
+  height: 100%;
   width: 300px;
   padding-top: 20px;
   z-index: 100;
@@ -24,27 +24,27 @@
   display: none;
 }
 .theme {
-
+  font-size: 20px;
   border-bottom: 1px solid #e9eeef;
 }
 
 .topic {
-  font-size: 16px;
+  font-size: 28px;
   margin-left: 5px;
-  padding-left: 30px;
+  padding-left: 35px;
   transition: all 0.3s ease;
 }
 
 
 .item {
-  font-size: 13px;
+  font-size: 15px;
   margin-left: 25px;
-  padding-left: 50px;
+  padding-left: 65px;
   transition: all 0.3s ease;
 }
 
 .sidebar a:hover {
-  background: #eb958e;
+  background: #410e09;
   color: #fff;
 }
 

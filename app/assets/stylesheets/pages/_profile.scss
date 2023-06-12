@@ -1,42 +1,35 @@
 /* Reset some default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-/* Global styles */
-body {
-  font-family: "Work Sans", "Helvetica", "sans-serif";
-  background-color: #f5f5f5;
-  color: #333;
-
+body.profile-page .sidebar {
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 
 header h1 {
-  color: #3C96B1;
+  color: #FF4D4D;
   font-size: 24px;
   text-align: center;
   margin-top: 20px;
   font-size: 40px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
 }
 
 .profile {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 50px auto;
   padding: 50px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px #3C96B1(0, 0, 0, 0.1);
-  color: #3C96B1;
+  color: white;
+  margin-left: 45px;
+  margin-right: 45px;
+  margin-bottom: 20px;
 }
 
 .profile-image {
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   overflow: hidden;
   margin-right: 30px;
@@ -51,38 +44,62 @@ header h1 {
 
 .profile-info {
   flex-grow: 1;
+  margin-left: 45px;
 
 }
 
 .profile-info h2 {
   font-size: 35px;
   margin-bottom: 10px;
-  color: #3C96B1;
+  color: #FF4D4D;
+
 
 }
 
 .about {
-  padding: 30px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px #3C96B1(0, 0, 0, 0.1);
-  text-align: center;
-  color: #3C96B1;
 
+  padding: 30px;
+  box-shadow: 0 2px 4px #FF4D4D(0, 0, 0, 0.1);
+  text-align: center;
+  color: white;
+  margin-left: 45px;
+  margin-right: 45px;
 }
 
 .about h2 {
   font-size: 24px;
   margin-bottom: 20px;
   text-align: center;
-  color: #3C96B1;
+  color: #FF4D4D;
 
 }
 
-footer {
-  margin-top: 100px;
-  background-color: #3C96B1;
-  padding: 20px;
-  text-align: center;
-  color: #fff;
 
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-image img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.profile-info {
+  margin-left: 20px;
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 20px;
 }

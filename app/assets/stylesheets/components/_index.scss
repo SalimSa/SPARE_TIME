@@ -13,14 +13,14 @@
 ul {
   list-style: none;
   font-size: 25px;
-  font-family: "lato";
+  font-family: "raleway";
 }
 
 h1 h2 h3 {
   font-family: "raleway";
 }
 h4 h5 h6 p {
-  font-family: "lato";
+  font-family: "raleway";
 }
 
 .link-gem-container {
@@ -59,10 +59,10 @@ h4 h5 h6 p {
 
 .text-component {
   padding: 200px;
-  background-color: #3C96B1;
+  background-color: #FF4D4D;
   height: 200px;
   width: 200px;
-  border: 2px solid #000;
+  border: 2px solid #f2efef;
 }
 
 .component-title {
@@ -127,7 +127,7 @@ h4 h5 h6 p {
   width: 165px;
   margin-top: 30px;
   margin-left: 80px;
-  background-color: #5D2A42;
+  background-color: #FF4D4D;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -149,7 +149,7 @@ h4 h5 h6 p {
   width: 165px;
   margin-top: 30px;
   margin-left: 80px;
-  background-color: #3C96B1;
+  background-color: #FF4D4D;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -233,3 +233,82 @@ h4 h5 h6 p {
   font-family: "lato";
   font-size: 70px;
 }
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.item-name h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.component {
+  margin-bottom: 40px;
+}
+
+.component-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.show-text p {
+  margin-bottom: 10px;
+}
+
+.text-form {
+  margin-top: 20px;
+}
+
+.show-url {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.link-gem-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.link-gem {
+  margin-left: 10px;
+}
+
+.task-form {
+  margin-top: 20px;
+}
+
+.show-text li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.show-text li i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.show-text li strong {
+  flex-grow: 1;
+}
+
+.link-form {
+  margin-top: 20px;
+}
+
+.map-box {
+  margin-top: 20px;
+}
+
+.back-btn {
+  margin-top: 20px;
+}
+
+/* Add your own styles as needed */
