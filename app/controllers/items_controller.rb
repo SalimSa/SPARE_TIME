@@ -20,14 +20,18 @@ class ItemsController < ApplicationController
 
 
     # @hope = LinkThumbnailer.generate('http://stackoverflow.com')
+
+    # MAP ---------
     @location = Location.new
     @locations = @item.locations
     @markers = @locations.geocoded.map do |location|
       {
         lat: location.latitude,
-        lng: location.longitude
+        lng: location.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {location: location})
       }
     end
+    # END MAP ------
   end
 
   def new
