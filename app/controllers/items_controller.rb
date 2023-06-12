@@ -15,6 +15,14 @@ class ItemsController < ApplicationController
     @links = LinkComponent.where(item: @item)
     @topic = @item.topic
     # @hope = LinkThumbnailer.generate('http://stackoverflow.com')
+    @location = Location.new
+    @locations = @item.locations
+    @markers = @locations.geocoded.map do |location|
+      {
+        lat: location.latitude,
+        lng: location.longitude
+      }
+    end
   end
 
   def new

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_07_104409) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_12_092917) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -81,6 +81,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_104409) do
     t.index ["item_id"], name: "index_link_components_on_item_id"
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_locations_on_item_id"
+  end
+
   create_table "text_components", force: :cascade do |t|
     t.text "paragraph"
     t.bigint "item_id", null: false
@@ -127,6 +138,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_104409) do
   add_foreign_key "components", "items"
   add_foreign_key "items", "topics"
   add_foreign_key "link_components", "items"
+  add_foreign_key "locations", "items"
   add_foreign_key "text_components", "items"
   add_foreign_key "themes", "users"
   add_foreign_key "topics", "themes"
