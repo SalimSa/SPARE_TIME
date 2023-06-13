@@ -22,7 +22,15 @@ class ThemesController < ApplicationController
   end
 
   def index
-    @themes = Theme.all
+
+    if params[:query].nil? || params[:query] == ''
+      @themes = Theme.all
+    else
+      @themes = Theme.search_by_title_and_description(params[:query])
+    end
+    # @themes = Theme.all
+    @topics = Topic.all
+
   end
 
   def new
