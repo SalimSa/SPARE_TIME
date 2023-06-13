@@ -1,0 +1,336 @@
+// .modal-dialog {
+// }
+.modal-content {
+  min-height: 200px;
+}
+
+.event-display {
+  padding: 40px;
+  background-color: #f2efef;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 350px;
+  height: auto;
+  margin: 25px;
+  word-wrap: break-word;
+    h1 {
+    // white-space: normal;
+    font-weight: bold;
+    font-family: "raleway";
+    font-size: 30px;
+  }
+    h3{
+      font-family: "lato";
+      font-size: 20px;
+    }
+  }
+
+.event-display-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.task-form {
+  font-family: "raleway";
+}
+
+ul {
+  list-style: none;
+  font-size: 25px;
+  font-family: "raleway";
+}
+
+h1 h2 h3 {
+  font-family: "raleway";
+}
+h4 h5 h6 p {
+  font-family: "raleway";
+}
+
+.link-gem-container {
+  overflow: hidden;
+  height: 170px;
+  width: 1200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  // padding: 16px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+.link-gem-container img {
+  height: 100%;
+  width: 170px;
+  object-fit: cover;
+}
+
+.link-gem h3{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.link-gem p {
+  font-size: 20px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  margin-left: 15px;
+}
+
+.text-component {
+  padding: 200px;
+  background-color: #FF4D4D;
+  height: 200px;
+  width: 200px;
+  border: 2px solid #f2efef;
+}
+
+.component-title {
+  margin-top: 20px;
+  font-family: "raleway";
+}
+
+.item-name {
+  padding-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+  margin-top: 20px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  text-align: center;
+  padding: 10px 15px;
+  h3 {
+    font-family: "raleway";
+    font-size: 25px;
+    font-weight: bold;
+  }
+  p {
+    font-family: "lato";
+    font-size: 18px;
+    font-style: italic;
+  }
+}
+
+.themes-card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.themes-card {
+  width: 100%;
+
+  .themes-photo img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.back-btn {
+  font-family: "lato";
+  width: 165px;
+  margin-top: 30px;
+  background-color: #FF4D4D;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0;
+  margin-bottom: 20px;
+  a {
+    text-decoration: none;
+    color: #B5C7CF;
+  }
+}
+
+.create-btn {
+  font-family: "lato";
+  width: auto;
+  margin-top: 30px;
+  background-color: #FF4D4D;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  // make sure that the content is well centered in the padding!!
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.create-btn:hover {
+  opacity: 1;
+}
+
+.topic-heading {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.theme-card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  flex-wrap: wrap;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+.theme-card {
+  display: flex;
+}
+
+.theme-content {
+  width: 400px;
+  margin: 10px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  padding: 16px;
+}
+
+.theme-content h3 {
+  font-family: "raleway";
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.theme-content p {
+  font-family: "lato";
+  font-size: 20px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.banner {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+.banner h1{
+  position: absolute;
+  top: 95px;
+  left: 20px;
+  font-family: "raleway";
+  font-weight: bolder;
+  font-size: 110px;
+}
+.banner h3{
+  position: absolute;
+  top:215px;
+  left: 20px;
+  font-family: "lato";
+  font-size: 70px;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.item-name h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.component {
+  margin-bottom: 40px;
+}
+
+.component-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.show-text p {
+  margin-bottom: 10px;
+}
+
+.text-form {
+  margin-top: 20px;
+}
+
+.show-url {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.link-gem-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.link-gem {
+  margin-left: 10px;
+}
+
+.task-form {
+  margin-top: 20px;
+}
+
+.show-text li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.show-text li i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.show-text li strong {
+  flex-grow: 1;
+}
+
+.link-form {
+  margin-top: 20px;
+}
+
+.map-box {
+  margin-top: 20px;
+}
+
+
+
+/* Add your own styles as needed */
