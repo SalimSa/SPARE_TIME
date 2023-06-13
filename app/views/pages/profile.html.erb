@@ -1,30 +1,28 @@
+<body class="profile-page">
+</body>
 
-</head>
-<body class="profile-page container">
-  <header>
-    <h1>Marta profile</h1>
-  </header>
+<div class="profile-page container">
 
-  <div class="profile">
-    <div class="profile-image">
-      <%= image_tag "https://avatars.githubusercontent.com/u/35274956?v=4" %>
+  <div class="header">
+    <h1>Marta's profile</h1>
+  </div>
+
+  <div class="flex-container profile">
+    <div class="flex-item">
+      <%= image_tag "profile.jpg", alt: "avatar", class: "avatar-image"%>
     </div>
-    <div class="profile-info">
-      <p>Email: <%= current_user.email %></p>
-      <p>Location: <% if current_user.location %><%= current_user.location %><% else %>Bolivia's Salar de Uyuni<% end %></p>
-      <p>Occupation: Web Developer</p>
+
+    <div class="flex-item info">
+      <p><strong>Email: </strong> <%= current_user.email %></p>
+      <p><strong>Location: </strong><% if current_user.location %><%= current_user.location %><% else %>Bolivia's Salar de Uyuni<% end %></p>
+      <p><strong>Occupation: </strong>Web Developer</p>
     </div>
   </div>
 
-  <section class="profile-about">
+  <div class="profile-about">
     <h2>About Me</h2>
     <p>
       "Hi there! I'm an aspiring superhero by day and a professional nap-taker by night. My hobbies include eating pizza, making terrible puns, and avoiding adult responsibilities. I firmly believe that laughter is the best medicine, especially when it comes to embarrassing dance moves. If you need someone to lighten the mood or bring the party, I'm your go-to person. Just be warned, I come with a lifetime supply of dad jokes and a contagious giggle. Let's embrace the silliness and have a laugh-filled adventure together!"
     </p>
-  </section>
-
-  <footer>
-    <p>&copy; 2023 SpareTime. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+  </div>
+</div>
