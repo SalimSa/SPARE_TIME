@@ -7,11 +7,16 @@ class CalendarComponentsController < ApplicationController
     redirect_to item_path(@item)
   end
 
-  # def update
-  #   @calendar = CalendarComponent.find(params[:id])
-  #   @calendar.update(calendar_params)
-  #   redirect_to item_path(@calendar.item)
-  # end
+  def update
+    @calendar = CalendarComponent.find(params[:id])
+    @calendar.update(calendar_params)
+    redirect_to item_path(@calendar.item)
+  end
+
+  def destroy
+    @calendar.destroy
+    redirect_to item_path(@calendar.item), status: :see_other
+  end
 
   private
 

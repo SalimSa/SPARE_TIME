@@ -2,29 +2,73 @@
   <div class="item-name">
     <h1><%= @item.title %></h1>
   </div>
-
+<%# -------------------------------------- Text component ----------------------------------------------- %>
   <div class="component">
     <h3 class="component-title">Notepad</h3>
     <div class="show-text">
       <% @texts.each do |text| %>
-        <p><%= text.paragraph %></p>
+        <p><%= text.paragraph %>
+        <%= simple_form_for [@item, text] do |f| %>
+          <%# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Edit
+          </button> %>
+          <div class="modal fade" id="ModalText" tabindex="-1" aria-labelledby="ModalText" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="ModalText">Add text to notepad</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="text-form">
+                    <div class="d-flex align-items-center justify-content-start">
+                      <%= f.input :paragraph, class: 'form-control',input_html: { onchange: "this.form.submit()" } %>
+                      <%= f.submit 'Edit', class: "btn btn-default btn-primary" %>
+                      <%= link_to "Delete", item_path(text), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
-    <div class="text-form" data-controller="character-counter">
-  <%= simple_form_for [@item, @text] do |f| %>
-    <%= f.input :paragraph, placeholder: "Write here...", input_html: { data: { character_counter_target: "input" } } %>
-    <%= f.submit class: "btn btn-primary" %>
-  <% end %>
-  <p>Paragraph is currently <strong data-character-counter-target="counter"></strong> characters long.</p>
-</div>
-</div>
+  </div>
 
-<div class="component">
-  <h3 class="component-title">Links</h3>
-  <div class="show-url">
-    <% @links.each do |link| %>
-      <% begin %>
-        <% object = LinkThumbnailer.generate("http://" + link.url) %>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalText">
+    Edit notes
+  </button>
+
+<!-- Modal -->
+  <div class="modal fade" id="ModalText" tabindex="-1" aria-labelledby="ModalText" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalText">Add text to notepad</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="text-form">
+            <%= simple_form_for [@item, @text] do |f| %>
+              <%= f.input :paragraph, placeholder: "Write here..."%>
+              <%= f.submit 'create', class: "btn btn-default btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<%# ----------------------------------------- link component ------------------------------------- %>
+  <div class="component">
+    <h3 class="component-title">Links</h3>
+    <div class="show-url">
+      <% @links.each do |link| %>
+        <% object = LinkThumbnailer.generate("http://"+link.url) %>
+
         <div class="link-gem-container">
           <%= image_tag object.images.first.src.to_s, alt: "Link image", width: 200 %>
           <div class="link-gem">
@@ -41,51 +85,174 @@
           </div>
         </div>
       <% end %>
-    <% end %>
+      <button type="button" class="btn btn-primary link-btn" data-bs-toggle="modal" data-bs-target="#ModalLink">
+        Add web link
+      </button>
+
+    <!-- Modal -->
+      <div class="modal fade" id="ModalLink" tabindex="-1" aria-labelledby="ModalLink" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLink">Insert a link:</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="link-form">
+                <%= simple_form_for [@item, @link] do |f| %>
+                  <%= f.input :url, placeholder: "www.example.com" %>
+                  <%= f.submit 'Generate', class: "btn btn-default btn-primary create-btn" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-  <div class="link-form">
-    <%= simple_form_for [@item, @link] do |f| %>
-      <%= f.input :url, placeholder: "www.example.com" %>
-      <%= f.submit class: "btn btn-primary" %>
+</div>
+
+
+<%# ------------------------------ task component ---------------------------------------------------- %>
+
+  <div class="component">
+    <h3 class="component-title">Task list</h3>
+    <ul class="show-text">
+      <% @tasks.each do |task| %>
+        <%= simple_form_for [@item, task] do |f| %>
+          <div class="d-flex align-items-center justify-content-start" >
+            <%= f.input :completed, as: :boolean, label: false, class: 'form-control', input_html: { onchange: "this.form.submit()" } %>
+            <%= task.title %></strong> - <%= task.details %>
+            <button type="button" class="btn btn-primary link-btn" data-bs-toggle="modal" data-bs-target="#ModalTaskEdit<%= task.id %>">
+              Edit
+            </button>
+            <div class="modal fade" id="ModalTaskEdit<%= task.id %>"tabindex="-1" aria-labelledby="ModalTaskEdit" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="ModalTaskEdit">Edit task:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="task-form">
+                        <%= f.input :title , class: 'form-control',input_html: { onchange: "this.form.submit()" } %>
+                        <%= f.input :details, class: 'form-control',input_html: { onchange: "this.form.submit()" } %>
+                        <%= f.submit 'Edit', class: "btn btn-default btn-primary" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </ul>
+
+  </div>
+
+      <button type="button" class="btn btn-primary link-btn" data-bs-toggle="modal" data-bs-target="#ModalTask">
+        Add task
+      </button>
+
+    <!-- Modal -->
+      <div class="modal fade" id="ModalTask" tabindex="-1" aria-labelledby="ModalTask" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalTask">Add a task:</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="task-form">
+                <%= simple_form_for [@item, @task] do |f| %>
+                  <div class="form-group">
+                    <%= f.input :title, class: 'form-control', placeholder: "Grocery shopping..." %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.input :details, class: 'form-control', placeholder: "Milk, Chicken..." %>
+                  </div>
+                  <%= f.submit 'Create', class: 'btn create-btn btn-default btn-primary' %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<%# ------------------------------ Event component ---------------------------------------------------- %>
+
+  <h3 class="component-title">Events:</h3>
+  <div class="calendar-form">
+    <div class="event-display-container">
+      <% @calendars.each do |calendar| %>
+        <div class="event-display">
+          <h1><%= calendar.name %></h1>
+          <h3><%= calendar.start_time %></h3>
+        </div>
+      <% end %>
+      <button type="button" class="btn btn-primary link-btn" data-bs-toggle="modal" data-bs-target="#ModalEventEdit">
+        Edit
+      </button>
+
+    </div>
+    <h3 class="component-title">Create events:</h3>
+      <button type="button" class="btn btn-primary link-btn" data-bs-toggle="modal" data-bs-target="#ModalEvent">
+        Add Event
+      </button>
+    <%= simple_form_for [@item, @calendar] do |f| %>
+      <!-- Modal -->
+      <div class="modal fade" id="ModalEvent" tabindex="-1" aria-labelledby="ModalEvent" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalEvent">Create an event:</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="event-form">
+                <div class="input-group"><%= f.input :start_time, label: "Date:" %></div>
+                <%= f.input :name, label: "Event description:"%>
+                <%= f.button :submit, class: "btn create-btn btn-default btn-primary", value: "Create event" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
 
-  <div class="component">
-  <h3 class="component-title">Task list</h3>
-  <ul class="show-text">
-    <% @tasks.each do |task| %>
-      <%= simple_form_for [@item, task] do |f| %>
-        <div class="task-item d-flex align-items-center justify-content-start">
-          <%= f.input :completed, as: :boolean, label: false, class: 'form-control task-checkbox', input_html: { onchange: "this.form.submit()" } %>
-          <div class="task-details">
-            <strong><%= task.title %></strong> - <%= task.details %>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </ul>
-  <div class="task-form">
-    <%= simple_form_for [@item, @task] do |f| %>
-      <div class="form-group">
-        <%= f.input :title, class: 'form-control', placeholder: "Grocery shopping..." %>
-      </div>
-      <div class="form-group">
-        <%= f.input :details, class: 'form-control', placeholder: "Milk, Chicken..." %>
-      </div>
-      <%= f.submit class: 'btn btn-primary mt-3' %>
-    <% end %>
-  </div>
-</div>
+<%# ------------------------------ Location component ---------------------------------------------------- %>
+
 
   <div class="component">
     <h3 class="component-title">Location</h3>
     <div class="link-form">
-      <%= simple_form_for [@item, @location] do |f| %>
-        <%= f.input :name, placeholder: "e.g., Restaurants" %>
-        <%= f.input :address, placeholder: "123 Abbey Road" %>
-        <%= f.submit class: "btn btn-primary" %>
-      <% end %>
+      <button type="button" class="btn btn-primary link-btn" data-bs-toggle="modal" data-bs-target="#ModalLocation">
+        Add location
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="ModalLocation" tabindex="-1" aria-labelledby="ModalLocation" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLocation">Add a location:</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="location-form">
+                <%= simple_form_for [@item, @location] do |f| %>
+                  <%= f.input :name, placeholder: "e.g., Restaurants" %>
+                  <%= f.input :address, placeholder: "123 Abbey Road" %>
+                  <%= f.submit 'Add location',class: "btn create-btn btn-default btn-primary" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   <div class="map-container">
@@ -96,24 +263,7 @@
     </div>
   </div>
 
-  <h3 class="component-title">Create events:</h3>
-  <div class="calendar-form">
-    <div class="event-display">
-      <% @calendars.each do |calendar| %>
-        <%= calendar.name %>
-        <%= calendar.start_time %>
-      <% end %>
-    </div>
-    <%= simple_form_for [@item, @calendar] do |f| %>
-      <div class="input-group">
-        <%= f.input :start_time, label: "Date:" %>
-      </div>
-      <%= f.input :name, label: "Event description:"%>
-      <%= f.button :submit, class: "button btn btn-danger text-white w-100", value: "Create event" %>
-    <% end %>
-  </div>
-
-  <div class="back-btn">
+  <div class="btn back-btn btn-default btn-primary">
     <%= link_to "Back", topic_path(@topic) %>
   </div>
 </div>

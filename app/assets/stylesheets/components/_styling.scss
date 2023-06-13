@@ -1,3 +1,34 @@
+// .modal-dialog {
+// }
+.modal-content {
+  min-height: 200px;
+}
+
+.event-display {
+  padding: 40px;
+  background-color: #f2efef;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 350px;
+  height: auto;
+  margin: 25px;
+  word-wrap: break-word;
+    h1 {
+    // white-space: normal;
+    font-weight: bold;
+    font-family: "raleway";
+    font-size: 30px;
+  }
+    h3{
+      font-family: "lato";
+      font-size: 20px;
+    }
+  }
+
+.event-display-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
 .task-form {
   font-family: "raleway";
@@ -115,6 +146,7 @@ h4 h5 h6 p {
 }
 
 .back-btn {
+  font-family: "lato";
   width: 165px;
   margin-top: 30px;
   background-color: #A53860;
@@ -122,18 +154,20 @@ h4 h5 h6 p {
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
+  box-shadow: 0;
   margin-bottom: 20px;
-  // make sure that the content is well centered in the padding!!
   a {
     text-decoration: none;
     color: white;
   }
 }
+
 .topic-heading {
   margin-top: 20px;
   margin-left: 20px;
 }
 .create-btn {
+  font-family: "lato";
   width: 165px;
   margin-top: 30px;
   background-color: #A53860;
@@ -141,13 +175,23 @@ h4 h5 h6 p {
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   // make sure that the content is well centered in the padding!!
   a {
     text-decoration: none;
     color: white;
   }
 }
+
+.create-btn:hover {
+  opacity: 1;
+}
+
+.topic-heading {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
 
 .theme-card-container {
   display: grid;
@@ -292,6 +336,7 @@ h4 h5 h6 p {
 .map-box {
   margin-top: 20px;
 }
+
 
 .favorite-btn {
   position: absolute;
