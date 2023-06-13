@@ -1,25 +1,23 @@
-/* Reset some default styles */
-
-body.profile-page .sidebar {
+.profile-page .sidebar {
   display: none;
   justify-content: center;
   align-items: center;
 }
 
+.profile-page {
+  padding: 20px;
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+}
 
-header h1 {
-  color: #FF4D4D;
-  font-size: 24px;
-  text-align: center;
-  margin-top: 20px;
-  font-size: 40px;
-
+.avatar-image {
+  border-radius: 50%;
+  width: 250px;
 }
 
 .profile {
   display: flex;
-  align-items: center;
   justify-content: center;
+
   padding: 50px;
   color: black;
   margin-left: 45px;
@@ -39,67 +37,20 @@ header h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-}
-
-.profile-info {
-  flex-grow: 1;
-  margin-left: 45px;
-
-}
-
-.profile-info h2 {
-  font-size: 35px;
-  margin-bottom: 10px;
-  color: #FF4D4D;
-
-
-}
-
-.about {
-
-  padding: 30px;
-  box-shadow: 0 2px 4px #FF4D4D(0, 0, 0, 0.1);
-  text-align: center;
-  color: black;
-  margin-left: 45px;
-  margin-right: 45px;
-}
-
-.about h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #FF4D4D;
-
 }
 
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-
-}
-
-header {
+.header-profile {
   text-align: center;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
-.profile-image img {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+.info-profile {
+  padding-left: 50px;
+  padding-top: 70px;
 }
 
-.profile-info {
-  margin-left: 20px;
-}
-
-
-footer {
+.profile-about {
   text-align: center;
-  margin-top: 20px;
 }

@@ -68,11 +68,20 @@
     <div class="show-url">
       <% @links.each do |link| %>
         <% object = LinkThumbnailer.generate("http://"+link.url) %>
+
         <div class="link-gem-container">
           <%= image_tag object.images.first.src.to_s, alt: "Link image", width: 200 %>
           <div class="link-gem">
             <h3><%= object.title %></h3>
             <p><%= object.description %></p>
+          </div>
+        </div>
+      <% rescue StandardError => e %>
+        <div class="link-gem-container">
+          <%= image_tag 'default_thumbnail.png', alt: "Default thumbnail", width: 200 %>
+          <div class="link-gem">
+            <h3>Error</h3>
+            <p>Failed to generate thumbnail for <%= link.url %>. Please try again later.</p>
           </div>
         </div>
       <% end %>
@@ -100,7 +109,9 @@
         </div>
       </div>
     </div>
+
   </div>
+</div>
 
 
 <%# ------------------------------ task component ---------------------------------------------------- %>
@@ -211,6 +222,7 @@
       </div>
     <% end %>
   </div>
+</div>
 
 <%# ------------------------------ Location component ---------------------------------------------------- %>
 

@@ -29,6 +29,7 @@
   flex-wrap: wrap;
 }
 
+
 .task-form {
   font-family: "raleway";
 }
@@ -81,7 +82,7 @@ h4 h5 h6 p {
 
 .text-component {
   padding: 200px;
-  background-color: #FF4D4D;
+  background-color: #A53860;
   height: 200px;
   width: 200px;
   border: 2px solid #f2efef;
@@ -148,7 +149,7 @@ h4 h5 h6 p {
   font-family: "lato";
   width: 165px;
   margin-top: 30px;
-  background-color: #FF4D4D;
+  background-color: #A53860;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -157,15 +158,19 @@ h4 h5 h6 p {
   margin-bottom: 20px;
   a {
     text-decoration: none;
-    color: #B5C7CF;
+    color: white;
   }
 }
 
+.topic-heading {
+  margin-top: 20px;
+  margin-left: 20px;
+}
 .create-btn {
   font-family: "lato";
-  width: auto;
+  width: 165px;
   margin-top: 30px;
-  background-color: #FF4D4D;
+  background-color: #A53860;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -186,6 +191,7 @@ h4 h5 h6 p {
   margin-top: 20px;
   margin-left: 20px;
 }
+
 
 .theme-card-container {
   display: grid;
@@ -332,5 +338,16 @@ h4 h5 h6 p {
 }
 
 
+.favorite-btn {
+  position: absolute;
+  // z-index: 100;
+  top: 4%;
+  left: 4%;
+  i {
+    color: #A53860;
+  }
+}
 
-/* Add your own styles as needed */
+.test {
+  position: relative;
+}
