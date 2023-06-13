@@ -1,25 +1,55 @@
-<body class="landing-page" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(<%= image_path 'banner.jpg' %>);">
-  <div class="flex-container">
-    <div class="content">
+<body class="landing-page">
+</body>
+
+<div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(<%= image_path 'banner.jpg' %>); padding-top:100px; background-size: cover;background-position: center;">
+  <div class="content">
+
+    <div class="logo-container">
 
       <div class="flex-item">
-        <h1 class="home-headline">Spare Time</h1>
-        <div class="home-sub-headline"><p>Researching made easy</p></div>
+        <h1 class="home-headline">Spare <%= image_tag "logo_sml.png", alt: "logo", width: "10%" %> Time</h1>
+        <div class="home-sub-headline"><p>Research. Store. Spare time.</p></div>
       </div>
 
       <div class="button-container">
         <div class="home-button">
           <%= link_to "MY HOME", home_path, class: "btn"%>
         </div>
-        <div class="flex-item">
-          <%= link_to "New theme", new_theme_path, class: "btn"%>
-        </div>
       </div>
     </div>
   </div>
+</div>
 
-  <footer class="footer">
-    <p>&copy; 2023 My Website. All rights reserved.</p>
-  </footer>
+<div class="flex-container info">
+  <div class="flex-item w-25">
+  </div>
 
-</body>
+</div>
+
+<div class="flex-container info">
+  <div class="flex-item">
+    <div class="info-card"><%= image_tag "infographic.png", alt: "infographic", width: "50%" %></div>
+  </div>
+</div>
+
+<h2 class="reviews-header">Loved by people around the world.</h2>
+
+<div class="flex-container reviews">
+  <div class="flex-item w-25">
+    <div class="review-container">
+        <div class="review-card"><%= image_tag "review 1.png", alt: "review1", width: "100%" %></div>
+    </div>
+  </div>
+
+  <div class="flex-item w-25">
+    <div class="review-container">
+      <div class="review-card"><%= image_tag "review 2.png", alt: "review1", width: "100%" %></div>
+    </div>
+  </div>
+
+  <div class="flex-item w-25">
+    <div class="review-container">
+      <div class="review-card"><%= image_tag "review 3.png", alt: "review1", width: "100%" %></div>
+    </div>
+  </div>
+</div>

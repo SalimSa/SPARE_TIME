@@ -43,10 +43,7 @@ class ThemesController < ApplicationController
     @theme.user = current_user
     @themes = Theme.all
     @topics = @theme.topics
-    # @markers = [{
-    #     lat: @theme.latitude,
-    #     lng: @theme.longitude
-    #   }]
+
   end
 
   # def edit
