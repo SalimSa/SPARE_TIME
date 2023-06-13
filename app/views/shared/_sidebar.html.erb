@@ -1,9 +1,8 @@
 
-
 <% if user_signed_in? %>
   <div class="sidebar" >
     <div>
-      <H2 >My favorites </H2>
+      <H2 >My themes </H2>
     </div>
     <% current_user.themes.order(:title).each do |theme| %>
       <div class="theme-container" data-controller="sidebar-dropdown">

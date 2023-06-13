@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     resources :topics, only: [:show, :new, :create]
 
     member do
-      patch 'favorite', to: 'themes#favorite', as: :favorite
-      patch 'unfavorite', to: 'themes#unfavorite', as: :unfavorite
+      get 'favorite', to: 'themes#favorite', as: :favorite
+      get 'unfavorite', to: 'themes#unfavorite', as: :unfavorite
     end
   end
 

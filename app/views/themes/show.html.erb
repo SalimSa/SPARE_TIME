@@ -1,18 +1,10 @@
 <div class="container topic-heading">
-  <h2><%= @theme.title %></h2>
-  <h3><%= @theme.description %></h3>
+    <h2><%= @theme.title %></h2>
+    <h3><%= @theme.description %></h3>
 
   <div class="create-btn">
-    <%= link_to "Add a new topic", new_theme_topic_path(@theme) %>
+    <%= link_to "New topic", new_theme_topic_path(@theme) %>
   </div>
-
-  <div class="favorite-btn">
-  <% if @theme.favorite %>
-    <%= link_to "Unfavorite", unfavorite_theme_path(@theme), method: :patch %>
-  <% else %>
-    <%= link_to "Favorite", favorite_theme_path(@theme), method: :patch %>
-  <% end %>
-</div>
 
 
   <div class="themes-card-container">

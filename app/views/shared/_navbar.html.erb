@@ -6,8 +6,8 @@
       <%= image_tag "logo.png", class: "navbar-logo" %>
     <% end %>
 
-     <div class="theme-search-form">
-              <%= form_with url: home_path, method: :get, class: "d-flex" do %>
+           <div class="theme-search-form">
+              <%= form_with url: themes_path, method: :get, class: "d-flex" do %>
                 <%= text_field_tag :query,
                   params[:query],
                   class: "form-control",

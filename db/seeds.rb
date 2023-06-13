@@ -75,6 +75,7 @@ user2 = User.create(email: "marta@gmail.com", password: "123456")
 user3 = User.create(email: "salim@gmail.com", password: "123456")
 # user1.photo.attach(io: file_profile_one, filename: "avatar.pic", content_type: "image/png")
 
+
 puts 'Creating themes...'
 travel = Theme.new(title: "Travel", description: "Best places to travel to !", user: user2)
 travel.photo.attach(io: file_one, filename: "theme.png", content_type: "image/png")
@@ -99,6 +100,7 @@ wellness.save!
 historical = Theme.new(title: "Historical Wonders", description: "Discover the fascinating history and architectural wonders of different eras.", user: user2)
 historical.photo.attach(io: file_six, filename: "theme.png", content_type: "image/png")
 historical.save!
+
 
 puts 'Creating topics for travel...'
 cuba = Topic.new(title: "Cuba", description: "Cuba is almost 500 years old and a riot of color.", theme: travel)
