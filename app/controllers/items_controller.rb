@@ -18,6 +18,10 @@ class ItemsController < ApplicationController
     @task = TaskComponent.new
     @tasks = TaskComponent.where(item: @item)
 
+    @calendar = CalendarComponent.new
+    @calendars = CalendarComponent.where(item: @item)
+
+
 
     # @hope = LinkThumbnailer.generate('http://stackoverflow.com')
 

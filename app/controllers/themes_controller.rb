@@ -1,6 +1,26 @@
 class ThemesController < ApplicationController
   before_action :set_theme, only: [:show, :edit, :update, :destroy]
 
+  def favorite
+    @theme = Theme.find(params[:id])
+    @theme.favorite = true
+    if @theme.save
+      redirect_to themes_path, notice: 'Theme favorited successfully.'
+    else
+      redirect_to themes_path, alert: 'Failed to favorite theme.'
+    end
+  end
+
+  def unfavorite
+    @theme = Theme.find(params[:id])
+    @theme.favorite = false
+    if @theme.save
+      redirect_to themes_path, notice: 'Theme unfavorited successfully.'
+    else
+      redirect_to themes_path, alert: 'Failed to unfavorite theme.'
+    end
+  end
+
   def index
     @themes = Theme.all
   end
@@ -47,6 +67,11 @@ class ThemesController < ApplicationController
   def set_theme
     @theme = Theme.find(params[:id])
   end
+
+  def theme_matches_search?(theme)
+    theme.title.downcase.include?(params[:query].downcase)
+  end
+
 
   def theme_params
     params.require(:theme).permit(:title, :description, :photo)
