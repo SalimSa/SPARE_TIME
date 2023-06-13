@@ -1,6 +1,8 @@
 class Theme < ApplicationRecord
   belongs_to :user
   has_many :topics, dependent: :destroy
+  has_many :items, through: :topics
+  has_many :task_components, through: :items
   # has_many :collaborations
   has_one_attached :photo
 

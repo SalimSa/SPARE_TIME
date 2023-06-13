@@ -81,13 +81,9 @@ travel = Theme.new(title: "Travel", description: "Best places to travel to !", u
 travel.photo.attach(io: file_one, filename: "theme.png", content_type: "image/png")
 travel.save!
 
-fooding = Theme.new(title: "Fooding", description: "Best places whereeat !", user: user2)
-fooding.photo.attach(io: file_two, filename: "theme.png", content_type: "image/png")
-fooding.save!
-
-adventure = Theme.new(title: "Adventure Escapes", description: "Experience thrilling adventures in breathtaking locations.", user: user2)
-adventure.photo.attach(io: file_three, filename: "theme.png", content_type: "image/png")
-adventure.save!
+lewagon = Theme.new(title: "Le Wagon", description: "Learn new skills today. Build your career in tech.", user: user2)
+lewagon.photo.attach(io: file_two, filename: "theme.png", content_type: "image/png")
+lewagon.save!
 
 artistic = Theme.new(title: "Artistic Exploration", description: "Immerse yourself in the vibrant world of art and creativity.", user: user2)
 artistic.photo.attach(io: file_four, filename: "theme.png", content_type: "image/png")
@@ -100,7 +96,6 @@ wellness.save!
 historical = Theme.new(title: "Historical Wonders", description: "Discover the fascinating history and architectural wonders of different eras.", user: user2)
 historical.photo.attach(io: file_six, filename: "theme.png", content_type: "image/png")
 historical.save!
-
 
 puts 'Creating topics for travel...'
 cuba = Topic.new(title: "Cuba", description: "Cuba is almost 500 years old and a riot of color.", theme: travel)
@@ -116,33 +111,26 @@ tokyo = Topic.new(title: "Tokyo", description: "Visiting Tokyo is like visiting 
 tokyo.photo.attach(io: file_ten, filename: "topic.png", content_type: "image/png")
 tokyo.save!
 
-puts 'Creating topics for fooding...'
-ramen = Topic.new(title: "Ramen", description: "If not tried, you must have heard of Ramen at least once in your life.", theme: fooding)
-ramen.photo.attach(io: file_eleven, filename: "topic.png", content_type: "image/png")
-ramen.save!
-pho = Topic.new(title: " Pho", description: "A simple yet an incredible dish, Pho (pronounced as 'fuh') is a Vietnamese dish made of rice noodles and meat", theme: fooding)
-pho.photo.attach(io: file_twelve, filename: "topic.png", content_type: "image/png")
-pho.save!
-paella = Topic.new(title: "Paella", description: "Paella has got its roots in Valencia, Spain. It is an ancient dish recreated with a modern touch in the present times. ", theme: fooding)
-paella.photo.attach(io: file_thirteen, filename: "topic.png", content_type: "image/png")
-paella.save!
-apfelstrudel = Topic.new(title: "Apfelstrudel", description: "More commonly known as Apple Strudel, Apfelstrudel is a popular pastry in Austria and other parts of Europe.", theme: fooding)
-apfelstrudel.photo.attach(io: file_fourteen, filename: "topic.png", content_type: "image/png")
-apfelstrudel.save!
+puts 'Creating topics for Le wagon...'
+ruby = Topic.new(title: "Ruby", description: "The best programming language", theme: lewagon)
+ruby.photo.attach(io: file_eleven, filename: "topic.png", content_type: "image/png")
+ruby.save!
 
-puts 'Creating topics for historical...'
-ancientrome = Topic.new(title: "Ancient Rome", description: "Explore the fascinating history and ruins of Ancient Rome.", theme: historical)
-ancientrome.photo.attach(io: file_fifteen, filename: "topic.png", content_type: "image/png")
-ancientrome.save!
-machupicchu = Topic.new(title: "Machu Picchu", description: "Discover the ancient Inca city nestled in the Andes Mountains.", theme: historical)
-machupicchu.photo.attach(io: file_sixteen, filename: "topic.png", content_type: "image/png")
-machupicchu.save!
-greet = Topic.new(title: "Great Wall of China", description: "Discover the majestic Great Wall of China and its historical significance.", theme: historical)
-greet.photo.attach(io: file_seventeen, filename: "topic.png", content_type: "image/png")
-greet.save!
-collosseum = Topic.new(title: "The Colosseum", description: "Explore the iconic Roman amphitheater and delve into its ancient history.", theme: historical)
-collosseum.photo.attach(io: file_eighteen, filename: "topic.png", content_type: "image/png")
-collosseum.save!
+oop = Topic.new(title: "Object-oriented programming", description: "programming paradigm based on the concept of objects, which can contain data and code.", theme: lewagon)
+oop.photo.attach(io: file_fifteen, filename: "topic.png", content_type: "image/png")
+oop.save!
+
+db = Topic.new(title: "The Database & Active Record ", description: "relational databases, discover the different relationships between tables (1:n, n:n) and how to draw a database scheme", theme: lewagon)
+db.photo.attach(io: file_sixteen, filename: "topic.png", content_type: "image/png")
+db.save!
+
+front = Topic.new(title: "Front", description: "A lot of HTML & CSS concepts ", theme: lewagon)
+front.photo.attach(io: file_seventeen, filename: "topic.png", content_type: "image/png")
+front.save!
+
+rails = Topic.new(title: "Rail ", description: "Rails is a full-stack framework. It ships with all the tools needed to build amazing web apps on both the front and back end.", theme: lewagon)
+rails.photo.attach(io: file_eighteen, filename: "topic.png", content_type: "image/png")
+rails.save!
 
 puts 'Creating topics for wellness...'
 yoga = Topic.new(title: "Yoga Retreat", description: "Immerse yourself in a peaceful yoga retreat surrounded by nature.", theme: wellness)
@@ -189,6 +177,8 @@ oldhavana.save!
 varadero = Item.new(title: "Varadero Beach Escape", description: "Relax on the pristine white sands of Varadero and enjoy crystal clear waters.", topic: cuba)
 varadero.photo.attach(io: file_thirty_one, filename: "theme.png", content_type: "image/png")
 varadero.save!
+
+puts 'Creating items for Le Wagon'
 ubud = Item.new(title: "Ubud Rice Terraces", description: "Visit the stunning rice terraces in Ubud and immerse yourself in Balinese culture.", topic: bali)
 ubud.photo.attach(io: file_thirty_two, filename: "theme.png", content_type: "image/png")
 ubud.save!
@@ -208,4 +198,58 @@ shibuya = Item.new(title: "Shibuya Crossing", description: "Experience the bustl
 shibuya.photo.attach(io: file_thirty_seven, filename: "theme.png", content_type: "image/png")
 shibuya.save!
 
-puts 'Finished!'
+
+image_url = "https://images.unsplash.com/photo-1538448174498-9956c159edb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGxlZ298ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1400&q=60"
+
+file_thirty_seven = URI.open(image_url)
+file_thirty_eight = URI.open(image_url)
+file_thirty_nine = URI.open(image_url)
+file_forty = URI.open(image_url)
+file_forty_one = URI.open(image_url)
+file_forty_two = URI.open(image_url)
+file_forty_three = URI.open(image_url)
+file_forty_four = URI.open(image_url)
+file_forty_five = URI.open(image_url)
+file_forty_six = URI.open(image_url)
+file_forty_seven = URI.open(image_url)
+file_forty_eight = URI.open(image_url)
+file_forty_nine = URI.open(image_url)
+file_fifty = URI.open(image_url)
+file_fifty_one = URI.open(image_url)
+file_fifty_two = URI.open(image_url)
+file_fifty_three = URI.open(image_url)
+file_fifty_four = URI.open(image_url)
+file_fifty_five = URI.open(image_url)
+file_fifty_six = URI.open(image_url)
+
+architecture = Theme.new(title: "Architecture", description: "Exploring the beauty of architectural marvels", user: user2)
+architecture.photo.attach(io: file_thirty_seven, filename: "theme.png", content_type: "image/png")
+architecture.save!
+
+nature = Theme.new(title: "Nature", description: "Immerse yourself in the wonders of nature", user: user2)
+nature.photo.attach(io: file_thirty_eight, filename: "theme.png", content_type: "image/png")
+nature.save!
+
+food = Theme.new(title: "Food", description: "A culinary journey through delicious dishes", user: user2)
+food.photo.attach(io: file_thirty_nine, filename: "theme.png", content_type: "image/png")
+food.save!
+
+music = Theme.new(title: "Music", description: "Melodies that touch the soul", user: user2)
+music.photo.attach(io: file_forty, filename: "theme.png", content_type: "image/png")
+music.save!
+
+sports = Theme.new(title: "Sports", description: "Unleash your competitive spirit with exciting sports", user: user2)
+sports.photo.attach(io: file_forty_one, filename: "theme.png", content_type: "image/png")
+sports.save!
+
+art = Theme.new(title: "Art", description: "Discover the beauty of artistic creations", user: user2)
+art.photo.attach(io: file_forty_two, filename: "theme.png", content_type: "image/png")
+art.save!
+
+fashion = Theme.new(title: "Fashion", description: "The latest trends and styles in the world of fashion", user: user2)
+fashion.photo.attach(io: file_forty_three, filename: "theme.png", content_type: "image/png")
+fashion.save!
+
+technology = Theme.new(title: "Technology", description: "Exploring the latest advancements in technology", user: user2)
+technology.photo.attach(io: file_forty_four, filename: "theme.png", content_type: "image/png")
+technology.save!
