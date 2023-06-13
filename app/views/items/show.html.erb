@@ -10,18 +10,20 @@
         <p><%= text.paragraph %></p>
       <% end %>
     </div>
-    <div class="text-form">
-      <%= simple_form_for [@item, @text] do |f| %>
-        <%= f.input :paragraph, placeholder: "Write here..." %>
-        <%= f.submit class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
+    <div class="text-form" data-controller="character-counter">
+  <%= simple_form_for [@item, @text] do |f| %>
+    <%= f.input :paragraph, placeholder: "Write here...", input_html: { data: { character_counter_target: "input" } } %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+  <p>Paragraph is currently <strong data-character-counter-target="counter"></strong> characters long.</p>
+</div>
+</div>
 
-  <div class="component">
-    <h3 class="component-title">Links</h3>
-    <div class="show-url">
-      <% @links.each do |link| %>
+<div class="component">
+  <h3 class="component-title">Links</h3>
+  <div class="show-url">
+    <% @links.each do |link| %>
+      <% begin %>
         <% object = LinkThumbnailer.generate("http://" + link.url) %>
         <div class="link-gem-container">
           <%= image_tag object.images.first.src.to_s, alt: "Link image", width: 200 %>
@@ -30,41 +32,51 @@
             <p><%= object.description %></p>
           </div>
         </div>
+      <% rescue StandardError => e %>
+        <div class="link-gem-container">
+          <%= image_tag 'default_thumbnail.png', alt: "Default thumbnail", width: 200 %>
+          <div class="link-gem">
+            <h3>Error</h3>
+            <p>Failed to generate thumbnail for <%= link.url %>. Please try again later.</p>
+          </div>
+        </div>
       <% end %>
-    </div>
-    <div class="link-form">
-      <%= simple_form_for [@item, @link] do |f| %>
-        <%= f.input :url, placeholder: "www.example.com" %>
-        <%= f.submit class: "btn btn-primary" %>
-      <% end %>
-    </div>
+    <% end %>
   </div>
+  <div class="link-form">
+    <%= simple_form_for [@item, @link] do |f| %>
+      <%= f.input :url, placeholder: "www.example.com" %>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
 
   <div class="component">
-    <h3 class="component-title">Task list</h3>
-    <ul class="show-text">
-      <% @tasks.each do |task| %>
-
-        <%= simple_form_for [@item, task] do |f| %>
-          <div class="d-flex align-items-center justify-content-start">
-            <%= f.input :completed, as: :boolean, label: false, class: 'form-control', input_html: { onchange: "this.form.submit()" } %>
-            <%= task.title %></strong> - <%= task.details %>
+  <h3 class="component-title">Task list</h3>
+  <ul class="show-text">
+    <% @tasks.each do |task| %>
+      <%= simple_form_for [@item, task] do |f| %>
+        <div class="task-item d-flex align-items-center justify-content-start">
+          <%= f.input :completed, as: :boolean, label: false, class: 'form-control task-checkbox', input_html: { onchange: "this.form.submit()" } %>
+          <div class="task-details">
+            <strong><%= task.title %></strong> - <%= task.details %>
           </div>
-        <% end %>
-      <% end %>
-    </ul>
-    <div class="task-form">
-      <%= simple_form_for [@item, @task] do |f| %>
-        <div class="form-group">
-          <%= f.input :title, class: 'form-control', placeholder: "Grocery shopping..." %>
         </div>
-        <div class="form-group">
-          <%= f.input :details, class: 'form-control', placeholder: "Milk, Chicken..." %>
-        </div>
-        <%= f.submit class: 'btn btn-primary mt-3' %>
       <% end %>
-    </div>
+    <% end %>
+  </ul>
+  <div class="task-form">
+    <%= simple_form_for [@item, @task] do |f| %>
+      <div class="form-group">
+        <%= f.input :title, class: 'form-control', placeholder: "Grocery shopping..." %>
+      </div>
+      <div class="form-group">
+        <%= f.input :details, class: 'form-control', placeholder: "Milk, Chicken..." %>
+      </div>
+      <%= f.submit class: 'btn btn-primary mt-3' %>
+    <% end %>
   </div>
+</div>
 
   <div class="component">
     <h3 class="component-title">Location</h3>

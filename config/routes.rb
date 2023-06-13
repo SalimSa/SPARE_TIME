@@ -10,6 +10,11 @@ Rails.application.routes.draw do
 
   resources :themes do
     resources :topics, only: [:show, :new, :create]
+
+    member do
+      get 'favorite', to: 'themes#favorite', as: :favorite
+      get 'unfavorite', to: 'themes#unfavorite', as: :unfavorite
+    end
   end
 
   resources :topics, only: [:show, :edit, :update, :destroy] do
@@ -25,6 +30,5 @@ Rails.application.routes.draw do
   end
 
   resources :text_components, only: [:destroy]
-
-  resources :link_component, only: [:destroy]
+  resources :link_components, only: [:destroy]
 end

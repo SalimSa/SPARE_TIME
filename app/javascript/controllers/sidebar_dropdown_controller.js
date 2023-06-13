@@ -16,4 +16,3 @@ export default class extends Controller {
     event.target.nextElementSibling.classList.toggle("hidden");
   }
 }
-
