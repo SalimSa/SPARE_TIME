@@ -1,4 +1,5 @@
 class CalendarComponentsController < ApplicationController
+  before_action :set_calendar, only: [:edit, :destroy, :update]
   def create
     @calendar = CalendarComponent.new(calendar_params)
     @item = Item.find(params[:item_id])
@@ -22,5 +23,9 @@ class CalendarComponentsController < ApplicationController
 
   def calendar_params
     params.require(:calendar_component).permit(:name, :start_time)
+  end
+
+  def set_calendar
+    @calendar = CalendarComponent.find(params[:id])
   end
 end

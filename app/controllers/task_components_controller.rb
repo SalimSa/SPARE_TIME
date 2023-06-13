@@ -22,6 +22,7 @@ class TaskComponentsController < ApplicationController
     @task.destroy
     redirect_to item_path(@task.item), status: :see_other
   end
+  
   private
 
   def task_params
