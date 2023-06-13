@@ -8,7 +8,7 @@
 
 
   <div class=" themes-card-container">
-    <% @items.each do |item| %>
+    <% @items.order(:title).each do |item| %>
       <%= link_to item_path(item) do %>
         <% if item.photo.attached? %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path item.photo.key %>)">
