@@ -1,6 +1,4 @@
 class TaskComponentsController < ApplicationController
-
-
   def create
     @task = TaskComponent.new(task_params)
     @item = Item.find(params[:item_id])
