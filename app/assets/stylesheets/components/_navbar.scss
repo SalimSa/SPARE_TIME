@@ -1,8 +1,7 @@
-
-
 .navbar-sparetime {
   justify-content: space-between;
-  background-color:#450920;
+  background-color: #450920;
+  padding: 3px;
 }
 
 .navbar-sparetime .nav-item>a {
@@ -12,8 +11,13 @@
   box-shadow: inset 0 0 0 1px #A53860;
   padding: 0.5rem 1.25rem 0.35rem;
   font-size: .875rem;
-  margin: 3px;
+  margin: 4px;
   border-radius: 0.25rem;
+}
+
+
+.navbar-nav li {
+  // height: 40px;
 }
 
 .navbar-sparetime .navbar-collapse {
@@ -25,10 +29,12 @@
 }
 
 .navbar-logo {
-
   width: 25px;
   margin-top: 2px;
   margin-bottom: 2px;
   margin-left: 20px;
+}
 
+.dropdown {
+  margin-bottom: 0;
 }
