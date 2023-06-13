@@ -7,6 +7,11 @@ class CalendarComponentsController < ApplicationController
     redirect_to item_path(@item)
   end
 
+  # def update
+  #   @calendar = CalendarComponent.find(params[:id])
+  #   @calendar.update(calendar_params)
+  #   redirect_to item_path(@calendar.item)
+  # end
 
   private
 
