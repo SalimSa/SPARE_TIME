@@ -35,30 +35,20 @@
   <div class="flex-item w-25">
     <h4 class="my-events">My events</h4>
     <div class="calendar-container">
-      <%= image_tag "calendar.png", alt: "calendar", width: "100%" %>
+      <% @events.each do |event| %>
+        <div class="event-display">
+          <h3><%= event.start_time %></h3>
+          <h1><%= event.name %></h1>
+        </div>
+      <% end %>
     </div>
   </div>
 
   <div class="flex-item w-25">
     <h4 class="my-events">My tasks</h4>
     <div class="task-card">
-      <h5>Le Wagon: <%= @incomplete_number %>/<%= @total_number %></h5>
+      <h5><%= @incomplete_number %>/<%= @total_number %></h5>
     </div>
   </div>
 
-  <div class="flex-item w-25">
-    <h4 class="my-events">Collaborations</h4>
-    <div class="task-card">
-      <p>No new collaborations</p>
-    </div>
-  </div>
 </div>
-
-<!--  <% @events.each do |event| %>
-  <div class="event-display">
-    <h3><%= event.start_time %></h3>
-    <h1><%= event.name %></h1>
-  </div>
-<% end %>
--->
-
