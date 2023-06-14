@@ -30,10 +30,6 @@
 }
 
 
-.task-form {
-  font-family: "raleway";
-}
-
 ul {
   list-style: none;
   font-size: 25px;
@@ -47,16 +43,18 @@ h4 h5 h6 p {
   font-family: "raleway";
 }
 
+
 .link-gem-container {
   overflow: hidden;
-  height: 170px;
-  width: 1200px;
+  height: 180px;
+  width: 500px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   // padding: 16px;
-  margin-bottom: 15px;
+  margin-right: 20px;
+  margin-bottom: 20px;
   margin-top: 15px;
   border-radius: 10px;
 }
@@ -66,13 +64,13 @@ h4 h5 h6 p {
   object-fit: cover;
 }
 
-.link-gem h3{
-  font-size: 30px;
+.link-gem h3 {
+  font-size: 22px;
   font-weight: bold;
 }
 
 .link-gem p {
-  font-size: 20px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -80,12 +78,69 @@ h4 h5 h6 p {
   margin-left: 15px;
 }
 
-.text-component {
-  padding: 200px;
-  background-color: #A53860;
-  height: 200px;
-  width: 200px;
-  border: 2px solid #f2efef;
+.link-task-row {
+  display: flex;
+}
+
+.show-link-card {
+  width: 500px;
+  margin-left: 40px;
+}
+
+.fa-trash-can {
+  color: #ccc;
+  position:;
+}
+
+.show-map-card{
+  width: 500px;
+}
+
+.show-event-card{
+  width: 500px;
+  margin-left: 40px;
+}
+
+.calendar-map-row {
+  display: flex;
+}
+.component-title{
+  padding-inline: 50px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+}
+
+
+.task-content {
+  padding: 10px;
+  max-width: 400px;
+  word-wrap: break-word;
+  height: auto;
+  font-size: 20px;
+  p {
+    opacity: .7;
+    font-size: 20px;
+  }
+
+  h3 {
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 25px;
+  }
+}
+// .text-component {
+//   padding: 200px;
+//   background-color: #A53860;
+//   height: 200px;
+//   width: 200px;
+//   border: 2px solid #f2efef;
+// }
+
+.text-content {
+  padding: 10px;
+  max-width: 1000px;
+  word-wrap: break-word;
+  height: auto;
 }
 
 .component-title {
@@ -299,20 +354,11 @@ h4 h5 h6 p {
   margin-bottom: 20px;
 }
 
-.link-gem-container {
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-
 .link-gem {
   margin-left: 10px;
 }
 
-.task-form {
-  margin-top: 20px;
-}
+
 
 .show-text li {
   list-style: none;
