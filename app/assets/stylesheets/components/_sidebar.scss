@@ -10,12 +10,9 @@
   border-radius: 15px;
 
   background-color: #130f02;
-
-
-  transform: translateX(0);
-  display: block;
   border: 1px solid #d0d0d0;
-  background: #fff
+  position: sticky;
+  top: 16px;
 }
 
 .sidebar a {
@@ -106,4 +103,3 @@ h4.theme-side {
   color: #e9eeef;
   padding-left: 16px;
 }
-
