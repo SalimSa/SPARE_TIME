@@ -1,7 +1,7 @@
 
-    <div class="topic-name" style="padding-top: 40px;">
-      <h3><strong>Favourites</strong></h3>
-    </div>
+  <div class="topic-name" style="padding-top: 40px;">
+    <h3><strong>Favourites</strong></h3>
+  </div>
 
 <div class="container topic-heading">
   <div class="themes-card-container">
@@ -31,13 +31,20 @@
   </div>
 </div>
 
-<div class="flex-container tasks">
+
   <div class="flex-item w-25">
     <h4 class="my-events">My events</h4>
     <div class="calendar-container">
-      <%= image_tag "calendar.png", alt: "calendar", width: "100%" %>
+      <% @all_events.each do |event| %>
+        <div class="event-display">
+          <h3><%= event.start_time %></h3>
+          <h1><%= event.name %></h1>
+        </div>
+        <% end %>
     </div>
   </div>
+
+
 
   <div class="flex-item w-25">
     <h4 class="my-events">My tasks</h4>
@@ -48,10 +55,4 @@
     <% end %>
   </div>
 
-  <div class="flex-item w-25">
-    <h4 class="my-events">Collaborations</h4>
-    <div class="task-card">
-      <p>No new collaborations</p>
-    </div>
-  </div>
 </div>
