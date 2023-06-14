@@ -1,13 +1,31 @@
 <div class="container topic-heading">
-  <h2><%= @topic.title %></h2>
-  <h2><%= @topic.description %></h2>
+  <div class="topics-header">
+    <div class="topic-header">
 
-  <div class="create-btn">
-    <%= link_to "New item", new_topic_item_path(@topic, @item)%>
+      <div class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        <%= link_to "Go back", theme_path(@topic.theme) %>
+      </div>
+
+      <div class="add-new-topic">
+        <%= link_to new_topic_item_path(@topic, @item) do%>
+          <i class="fa-solid fa-circle-plus"></i>
+        <%end%>
+      </div>
+
+      <div style="width:165px;">
+        <h1></h1>
+      </div>
+    </div>
+
+
+  <div class="topic-name">
+    <h3><%= @topic.title %></h3>
+    <h5><%= @topic.description %></h5>
   </div>
 
 
-  <div class=" themes-card-container">
+  <div class="themes-card-container">
     <% @items.order(:title).each do |item| %>
       <%= link_to item_path(item) do %>
         <% if item.photo.attached? %>
@@ -15,16 +33,16 @@
         <% else %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_tag "banner.jpg" %>)">
         <% end %>
-          <h3><%= item.title.truncate(25)  %></h3>
+          <h3><%= item.title.truncate(25) %></h3>
           <p><%= item.description.truncate(70) %></p>
         </div>
       <% end %>
     <% end %>
   </div>
 
-
   <div class="back-btn">
-    <%= link_to "Back", theme_path(@topic.theme)%>
+    <i class="fa-solid fa-arrow-left"></i>
+    <%= link_to "Go back", theme_path(@topic.theme) %>
   </div>
 
 </div>

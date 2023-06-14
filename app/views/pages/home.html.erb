@@ -1,53 +1,55 @@
 
+    <div class="topic-name" style="padding-top: 40px;">
+      <h3><strong>Favourites</strong></h3>
+    </div>
 
 <div class="container topic-heading">
-
-      <div class="themes-card-container">
-        <% @themes.order(:title).each do |theme| %>
-                <div class="card-favorite-btn">
-                  <%= link_to theme_path(theme) do %>
-                    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= cl_image_path(theme.photo.key) if theme.photo.key.present? %>)">
-                      <div class="card-content">
-                        <h3><%= theme.title.truncate(20) %></h3>
-                        <p><%= theme.description.truncate(70) %></p>
-                      </div>
-                    </div>
-                  <% end %>
-
-                <div class="favorite-btn">
-                  <% if theme.favorite? %>
-                    <%= link_to unfavorite_theme_path(theme), method: :patch do %><i class="fas fa-heart"></i><% end %>
-                  <% else %>
-                    <%= link_to favorite_theme_path(theme), method: :patch do %><i class="far fa-heart"></i><% end %>
-                  <% end %>
-                </div>
-             </div>
+  <div class="themes-card-container">
+    <% @themes.order(:title).each do |theme| %>
+      <div class="card-favorite-btn">
+        <%= link_to theme_path(theme) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= cl_image_path(theme.photo.key) if theme.photo.key.present? %>)">
+            <div class="card-content">
+              <h3><%= theme.title.truncate(20) %></h3>
+              <p><%= theme.description.truncate(70) %></p>
+            </div>
+          </div>
         <% end %>
+        <div class="favorite-btn">
+          <% if theme.favorite? %>
+            <%= link_to unfavorite_theme_path(theme), method: :patch do %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+          <% else %>
+            <%= link_to favorite_theme_path(theme), method: :patch do %>
+              <i class="far fa-heart"></i>
+            <% end %>
+          <% end %>
         </div>
-
-
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <div class="flex-container tasks">
-
   <div class="flex-item w-25">
     <h4 class="my-events">My events</h4>
-      <div class="calendar-container">
-        <%= image_tag "calendar.png", alt: "calendar", width: "100%" %>
-      </div>
+    <div class="calendar-container">
+      <%= image_tag "calendar.png", alt: "calendar", width: "100%" %>
+    </div>
   </div>
 
   <div class="flex-item w-25">
     <h4 class="my-events">My tasks</h4>
-      <div class="task-card">
-        <h5>Le Wagon: <%= @incomplete_number %>/<%= @total_number %></h5>
-      </div>
+    <div class="task-card">
+      <h5>Le Wagon: <%= @incomplete_number %>/<%= @total_number %></h5>
+    </div>
   </div>
 
   <div class="flex-item w-25">
     <h4 class="my-events">Collaborations</h4>
     <div class="task-card">
-        <p>No new collaborations</p>
-      </div>
+      <p>No new collaborations</p>
+    </div>
   </div>
-
 </div>
