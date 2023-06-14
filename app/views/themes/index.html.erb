@@ -1,42 +1,64 @@
-
 <div class="container topic-heading">
-      <div class="create-btn">
-        <%= link_to "New theme", new_theme_path %>
-      </div>
 
-
-
-      <div class="theme-search-form">
-        <%= form_with url: themes_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find a theme..."
-          %>
-          <%= submit_tag "Search", class: "theme-search-submit" %>
-        <% end %>
-      </div>
-
-      <div class="themes-card-container">
-        <% @themes.order(:title).each do |theme| %>
-                <div class="card-favorite-btn">
-                  <%= link_to theme_path(theme) do %>
-                    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= cl_image_path(theme.photo.key) if theme.photo.key.present? %>)">
-                      <div class="card-content">
-                        <h3><%= theme.title.truncate(20) %></h3>
-                        <p><%= theme.description.truncate(70) %></p>
-                      </div>
-                    </div>
-                  <% end %>
-
-                <div class="favorite-btn">
-                  <% if theme.favorite? %>
-                    <%= link_to unfavorite_theme_path(theme), method: :patch do %><i class="fas fa-heart"></i><% end %>
-                  <% else %>
-                    <%= link_to favorite_theme_path(theme), method: :patch do %><i class="far fa-heart"></i><% end %>
-                  <% end %>
-                </div>
-             </div>
-            <% end %>
-        </div>
+  <div class="theme-search-form">
+    <%= form_with url: themes_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a theme..."
+      %>
+      <%= submit_tag "Search", class: "theme-search-submit" %>
+    <% end %>
   </div>
+
+  <div class="topics-header"> 
+
+    <div class="topic-header">
+
+      <div style="width:165px;">
+      <h1></h1>
+      </div>
+
+
+      <div class="add-new-topic">
+        <%= link_to new_theme_path do%>
+          <i class="fa-solid fa-circle-plus"></i>
+        <%end%>
+      </div>
+
+      <div style="width:165px;">
+      <h1></h1>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="themes-card-container" style="padding-top: 20px";>
+    <% @themes.order(:title).each do |theme| %>
+      <div class="card-favorite-btn">
+        <%= link_to theme_path(theme) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= cl_image_path(theme.photo.key) if theme.photo.key.present? %>)">
+            <div class="card-content">
+              <h3><%= theme.title.truncate(20) %></h3>
+              <p><%= theme.description.truncate(70) %></p>
+            </div>
+          </div>
+        <% end %>
+
+        <div class="favorite-btn">
+          <% if theme.favorite? %>
+            <%= link_to unfavorite_theme_path(theme), method: :patch do %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+          <% else %>
+            <%= link_to favorite_theme_path(theme), method: :patch do %>
+              <i class="far fa-heart"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

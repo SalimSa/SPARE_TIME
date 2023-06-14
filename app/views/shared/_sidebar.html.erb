@@ -1,10 +1,7 @@
 
 <% if user_signed_in? %>
   <div class="sidebar">
- 
-    <div>
-      <H4 class="theme-side">My themes </H4>
-    </div>
+
     <% current_user.themes.order(:title).each do |theme| %>
       <div class="theme-container" data-controller="sidebar-dropdown">
         <a class="theme dropdown-btn"  data-action="click->sidebar-dropdown#toggleDropdownTopics" href=""><%= theme.title%></a>
