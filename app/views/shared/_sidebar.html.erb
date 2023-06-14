@@ -1,7 +1,5 @@
-
 <% if user_signed_in? %>
   <div class="sidebar">
-
     <% current_user.themes.order(:title).each do |theme| %>
       <div class="theme-container" data-controller="sidebar-dropdown">
         <% if theme.topics.any? %>

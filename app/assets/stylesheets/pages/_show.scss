@@ -15,7 +15,11 @@
   color: #ccc;
   font-size: 25px;
   width: 165px;
-  text-align: center;
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .topic-name {
@@ -26,6 +30,16 @@
   padding-bottom: 16px;
 }
 
-.fa-solid {
-  color: cornflowerblue;
+// .fa-solid {
+//   color: #F24343;
+//   font-size: 40px;
+//   left: 10px;
+// }
+
+.create-btn-icon {
+  color: #F24343;
+  font-size: 40px;
+}
+.create-btn-icon:hover {
+  opacity: .75;
 }
