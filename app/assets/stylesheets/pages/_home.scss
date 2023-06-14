@@ -95,3 +95,74 @@
 .card-favorite-btn {
   position: relative;
 }
+
+.flex-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.my-events {
+  color: #A53860;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin-bottom: 15px;
+}
+
+.task-card {
+  background-color: #F8F9FA;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.theme-title {
+  color: #A53860;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin-bottom: 10px;
+}
+
+.task-counter {
+  color: #555;
+  font-size: 16px;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.open-tasks {
+  color: #A53860;
+  font-weight: bold;
+}
+
+.total-tasks {
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .w-25 {
+    width: 100%;
+  }
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #eee;
+  margin-top: 5px;
+  border-radius: 13px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #A53860 !important;
+  transition: width 0.25s ease-in-out;
+
+}
