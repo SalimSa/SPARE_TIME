@@ -8,20 +8,25 @@
   margin-top: 10px;
   margin-left: 10px;
   border-radius: 15px;
-  background-color: #450920;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transform: translateX(0);
+  display: block;
+  border: 1px solid #d0d0d0;
+  background: #fff
 }
 .sidebar a {
   text-decoration: none;
   display: block;
   padding: 12px 20px;
-  color: white;
+  color: rgb(8, 6, 6);
   transition: all 0.3s ease;
+
+
 
 }
 
 .sidebar h2{
-  color: #A53860;
+  color: #080506;
   font-family: "Work Sans", "Helvetica", "sans-serif";
   padding: 6px 10px;
 }
@@ -71,9 +76,4 @@
 
 .hidden {
   display: none;
-}
-
-.search{
-  width: 300px;
-  color: #fff;
 }
