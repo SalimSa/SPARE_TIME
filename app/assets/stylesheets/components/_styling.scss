@@ -157,14 +157,41 @@ h4 h5 h6 p {
       font-size: 25px;
     }
 }
-// .text-title {
-//   margin-left: 35px
-//   i {
-//     margin-left: 13px;
-//     color: #ccc;
-//     font-size: 25px;
-//   }
-// }
+.text-title {
+  display: flex;
+  align-items: center;
+  padding-inline: 50px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+  margin-left: 35px;
+  margin-right: 125px;
+  margin-top: 20px;
+  i {
+    margin-left: 13px;
+    color: #ccc;
+    font-size: 25px;
+  }
+}
+
+.text-title i:hover {
+  color: black;
+}
+
+.task-title {
+  display: flex;
+  align-items: center;
+  padding-inline: 50px;
+  padding-right: 310px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+  margin-top: 20px;
+    i {
+      margin-left: 13px;
+      color: #ccc;
+      font-size: 25px;
+    }
+}
+
 
 .component-title i:hover {
   color: black;
