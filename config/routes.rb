@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :items, only: [:show, :edit, :update, :destroy] do
-    resources :text_components, only: [:new, :create, :update, :destroy]
+    resources :text_components, only: [:new, :create, :update]
     resources :link_components, only: [:new, :create, :update]
     resources :task_components, only: [:new, :create, :update]
     resources :calendar_components, only: [:new, :create, :update]
