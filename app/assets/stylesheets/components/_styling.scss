@@ -35,7 +35,7 @@ body {
 
 ul {
   list-style: none;
-  font-size: 25px;
+  font-size: 32px;
   font-family: "raleway";
 }
 
@@ -207,7 +207,7 @@ h4 h5 h6 p {
   font-family: "lato";
   width: 165px;
   margin-top: 30px;
-  background-color: #A53860;
+  // background-color: #A53860;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -216,7 +216,9 @@ h4 h5 h6 p {
   margin-bottom: 20px;
   a {
     text-decoration: none;
-    color: white;
+    color: black;
+    font-weight: 900;
+    padding-left: 6px;
   }
 }
 
