@@ -19,7 +19,7 @@
 
       <div class="themes-card-container">
         <% @themes.order(:title).each do |theme| %>
-                <div class="test">
+                <div class="card-favorite-btn">
                   <%= link_to theme_path(theme) do %>
                     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= cl_image_path(theme.photo.key) if theme.photo.key.present? %>)">
                       <div class="card-content">
@@ -38,5 +38,5 @@
                 </div>
              </div>
             <% end %>
-          </div>
         </div>
+  </div>

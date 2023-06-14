@@ -1,4 +1,5 @@
 .navbar-sparetime {
+
   justify-content: space-between;
   background-color: #130f02;
 
@@ -14,6 +15,8 @@
   border-radius: 0.25rem;
 }
 
+
+}
 .navbar-sparetime .navbar-collapse {
   flex-grow: 0;
 }
@@ -27,8 +30,4 @@
   margin-top: 2px;
   margin-bottom: 2px;
   margin-left: 20px;
-}
-
-.dropdown {
-  margin-bottom: 0;
 }
