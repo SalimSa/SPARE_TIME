@@ -41,9 +41,11 @@
 
   <div class="flex-item w-25">
     <h4 class="my-events">My tasks</h4>
-    <div class="task-card">
-      <h5>Le Wagon: <%= @incomplete_number %>/<%= @total_number %></h5>
-    </div>
+      <% @themes.order(:title).each do |theme| %>
+      <div class="task-card">
+        <h5><%= theme.title.truncate(20) %> <%= @incomplete_number %> incompleted tasks out of <%= @total_number %>!</h5>
+      </div>
+    <% end %>
   </div>
 
   <div class="flex-item w-25">
