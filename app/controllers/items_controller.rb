@@ -64,10 +64,28 @@ class ItemsController < ApplicationController
   #   end
   # end
 
-  # def destroy
-  #   @topic.destroy
-  #   redirect_to topics_path, status: :see_other
-  # end
+  def destroy
+    @text = TextComponent.find(params[:id])
+    @text.destroy
+    redirect_to item_path(@text.item), status: :see_other
+
+    @link = LinkComponent.find(params[:id])
+    @link.destroy
+    redirect_to item_path(@link.item), status: :see_other
+
+    @task = TaskComponent.find(params[:id])
+    @task.destroy
+    redirect_to item_path(@task.item), status: :see_other
+
+    @location = LocationComponent.find(params[:id])
+    @location.destroy
+    redirect_to item_path(@location.item), status: :see_other
+
+    @event = EventComponent.find(params[:id])
+    @event.destroy
+    redirect_to item_path(@event.item), status: :see_other
+
+  end
 
 
   private
