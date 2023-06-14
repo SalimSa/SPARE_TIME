@@ -9,12 +9,13 @@ body {
 }
 .event-display {
   padding: 40px;
-  background-color: #f2efef;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: #fffefc;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
   width: 350px;
   height: auto;
   margin: 25px;
   word-wrap: break-word;
+  border-radius: 10px;
     h1 {
     // white-space: normal;
     font-weight: bold;
@@ -25,7 +26,7 @@ body {
       font-family: "lato";
       font-size: 20px;
     }
-  }
+}
 
 .event-display-container{
   display: flex;
@@ -48,6 +49,7 @@ h4 h5 h6 p {
 
 
 .link-gem-container {
+  position: relative;
   overflow: hidden;
   height: 180px;
   width: 500px;
@@ -61,6 +63,13 @@ h4 h5 h6 p {
   margin-top: 15px;
   border-radius: 10px;
 }
+
+.link-trash {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 .link-gem-container img {
   height: 100%;
   width: 170px;
@@ -79,6 +88,7 @@ h4 h5 h6 p {
   margin-bottom: 0;
   margin-top: 8px;
   margin-left: 15px;
+  margin-right: 10px;
 }
 
 .link-task-row {
@@ -90,13 +100,43 @@ h4 h5 h6 p {
   margin-left: 40px;
 }
 
+.fa-trash-can:hover {
+  color:black
+}
 .fa-trash-can {
   color: #ccc;
-  // position:;
+}
+
+.fa-pen:hover {
+  color:black
+}
+
+.fa-pen {
+  color: #ccc;
+}
+
+.text-edit-btn {
+  margin-right: 15px;
+  margin-left: 15px;
+  font-size: 20px;
+  background: none;
+  border: none;
+}
+
+
+
+.task-edit-btn, .event-edit-btn {
+  font-size: 20px;
 }
 
 .show-map-card{
   width: 500px;
+}
+.calendar-map-row {
+  display: flex;
+}
+.map-container {
+  margin-top: -20px;
 }
 
 .show-event-card{
@@ -104,19 +144,27 @@ h4 h5 h6 p {
   margin-left: 40px;
 }
 
-.calendar-map-row {
+
+.component-title {
   display: flex;
-}
-.component-title{
+  align-items: center;
   padding-inline: 50px;
   padding-bottom: 10px;
   border-bottom: 2px solid #ccc;
+    i {
+      margin-left: 13px;
+      color: #ccc;
+      font-size: 25px;
+    }
 }
 
+.component-title i:hover {
+  color: black;
+}
 
 .task-content {
   padding: 10px;
-  max-width: 400px;
+  width: 400px;
   word-wrap: break-word;
   height: auto;
   font-size: 20px;
@@ -140,10 +188,12 @@ h4 h5 h6 p {
 // }
 
 .text-content {
+  margin-left: 20px;
   padding: 10px;
   max-width: 1000px;
   word-wrap: break-word;
   height: auto;
+  display: flex;
 }
 
 .component-title {
@@ -384,7 +434,8 @@ h4 h5 h6 p {
 }
 
 .map-box {
-  margin-top: 20px;
+  margin-top: 10px;
+  border-radius: 15px;
 }
 
 
