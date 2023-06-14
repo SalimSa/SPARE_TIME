@@ -1,13 +1,14 @@
 .navbar-sparetime {
-
+  background-color: #130f02;
   justify-content: space-between;
-  border-bottom: 2px solid #ccc;
+  position: sticky;
+  // border-bottom: 2px solid #ccc;
   // padding-bottom: 6px;
 
 }
 
 .navbar-sparetime .nav-item>a {
-  color: black;
+  color: white;
   font-size: 1.2rem;
   font-family: "Work Sans", "Helvetica", "sans-serif";
   padding: 0.5rem 1.25rem 0.35rem;
@@ -15,6 +16,7 @@
   margin: 4px;
   border-radius: 0.25rem;
   margin-right: 25px;
+
 }
 
 
@@ -32,5 +34,3 @@
   margin-bottom: 2px;
   margin-left: 20px;
 }
-
-
