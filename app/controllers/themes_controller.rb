@@ -15,9 +15,9 @@ class ThemesController < ApplicationController
     @theme = Theme.find(params[:id])
     @theme.favorite = false
     if @theme.save
-      redirect_to themes_path, notice: 'Theme unfavorited successfully.'
+      redirect_to request.referrer, notice: 'Theme unfavorited successfully.'
     else
-      redirect_to themes_path, alert: 'Failed to unfavorite theme.'
+      redirect_to request.referrer, alert: 'Failed to unfavorite theme.'
     end
   end
 
