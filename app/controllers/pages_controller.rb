@@ -12,6 +12,9 @@ class PagesController < ApplicationController
       @total_number = @tasks.count
       @incomplete_number = @tasks.where(completed: false).count
     end
+
+    @events = CalendarComponent.all
+
   end
 
   def profile
