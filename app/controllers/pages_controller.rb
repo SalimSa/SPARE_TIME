@@ -13,8 +13,7 @@ class PagesController < ApplicationController
       @incomplete_number = @tasks.where(completed: false).count
     end
 
-    # @events = CalendarComponent.
-
+    @events = CalendarComponent.all
     @all_events = []
     @themes.each do |theme|
       @all_events += theme.calendar_components

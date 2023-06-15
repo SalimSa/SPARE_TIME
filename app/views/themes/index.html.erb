@@ -11,7 +11,7 @@
     <% end %>
   </div>
 
-  <div class="topics-header"> 
+  <div class="topics-header">
 
     <div class="topic-header">
 
@@ -20,9 +20,9 @@
       </div>
 
 
-      <div class="add-new-topic">
+      <div class="create-btn-icon">
         <%= link_to new_theme_path do%>
-          <i class="fa-solid fa-circle-plus"></i>
+          <i class="create-btn-icon fa-solid fa-circle-plus"></i>
         <%end%>
       </div>
 
@@ -50,11 +50,11 @@
         <div class="favorite-btn">
           <% if theme.favorite? %>
             <%= link_to unfavorite_theme_path(theme), method: :patch do %>
-              <i class="fas fa-heart"></i>
+              <i class="fas fa-heart fa-lg"></i>
             <% end %>
           <% else %>
             <%= link_to favorite_theme_path(theme), method: :patch do %>
-              <i class="far fa-heart"></i>
+              <i class="far fa-heart fa-lg"></i>
             <% end %>
           <% end %>
         </div>

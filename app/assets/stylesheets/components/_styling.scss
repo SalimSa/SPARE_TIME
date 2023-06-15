@@ -1,5 +1,33 @@
-// .modal-dialog {
-// }
+.create-btn {
+  font-family: "lato";
+  color: white;
+  margin-top: 30px;
+  background-color: #F24343;
+  padding: 10px 40px ;
+  border: none;
+  border-radius: 5px;
+  // box-sizing: border-box;
+  // margin-bottom: 30px;
+  // text-decoration: none;
+  // justify-content: center;
+  // align-items: center;
+
+  // // make sure that the content is well centered in the padding!!
+  // a {
+    text-decoration: none;
+  //   color: white;
+  // }
+}
+
+.create-btn:hover {
+  opacity: .75;
+  color: white;
+}
+
+.create-btn-icon {
+  color: #F24343;
+}
+
 .modal-content {
   min-height: 200px;
 }
@@ -79,6 +107,7 @@ h4 h5 h6 p {
 .link-gem h3 {
   font-size: 22px;
   font-weight: bold;
+
 }
 
 .link-gem p {
@@ -100,20 +129,18 @@ h4 h5 h6 p {
   margin-left: 40px;
 }
 
-.fa-trash-can:hover {
-  color:black
-}
-.fa-trash-can {
-  color: #ccc;
-}
-
-.fa-pen:hover {
-  color:black
+.fa-trash-can, .fa-pen{
+  color: #F24343;
+  font-size: 20px;
+  a{
+    text-decoration: none;
+  }
 }
 
-.fa-pen {
-  color: #ccc;
+.fa-pen:hover, .fa-trash-can:hover{
+  opacity: .75;
 }
+
 
 .text-edit-btn {
   margin-right: 15px;
@@ -121,6 +148,9 @@ h4 h5 h6 p {
   font-size: 20px;
   background: none;
   border: none;
+  i {
+    color: #F24343
+  };
 }
 
 
@@ -153,7 +183,7 @@ h4 h5 h6 p {
   border-bottom: 2px solid #ccc;
     i {
       margin-left: 13px;
-      color: #ccc;
+      color: #F24343;
       font-size: 25px;
     }
 }
@@ -162,19 +192,20 @@ h4 h5 h6 p {
   align-items: center;
   padding-inline: 50px;
   padding-bottom: 10px;
+  padding-right: 840px;
   border-bottom: 2px solid #ccc;
   margin-left: 35px;
   margin-right: 125px;
   margin-top: 20px;
   i {
     margin-left: 13px;
-    color: #ccc;
+    color: #F24343;
     font-size: 25px;
   }
 }
 
-.text-title i:hover {
-  color: black;
+.text-title i:hover, .component-title i:hover, .task-title i:hover {
+  opacity: .75;
 }
 
 .task-title {
@@ -187,14 +218,9 @@ h4 h5 h6 p {
   margin-top: 20px;
     i {
       margin-left: 13px;
-      color: #ccc;
+      color: #F24343;
       font-size: 25px;
     }
-}
-
-
-.component-title i:hover {
-  color: black;
 }
 
 .task-content {
@@ -229,6 +255,7 @@ h4 h5 h6 p {
   word-wrap: break-word;
   height: auto;
   display: flex;
+
 }
 
 .component-title {
@@ -257,6 +284,7 @@ h4 h5 h6 p {
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
   text-align: center;
   padding: 10px 15px;
+  margin-bottom: 30px;
   h3 {
     font-family: "raleway";
     font-size: 25px;
@@ -310,26 +338,6 @@ h4 h5 h6 p {
 .topic-heading {
   margin-top: 20px;
   margin-left: 20px;
-}
-.create-btn {
-  font-family: "lato";
-  width: 165px;
-  margin-top: 30px;
-  background-color: #A53860;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  box-sizing: border-box;
-  margin-bottom: 30px;
-  // make sure that the content is well centered in the padding!!
-  a {
-    text-decoration: none;
-    color: white;
-  }
-}
-
-.create-btn:hover {
-  opacity: 1;
 }
 
 .topic-heading {

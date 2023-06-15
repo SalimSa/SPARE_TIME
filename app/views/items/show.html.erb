@@ -134,7 +134,7 @@
               <div class="task-content">
                 <h3><%=  task.title %>: </h3> <p><%= task.details %></p>
               </div>
-              <a type="button" class="task-edit-btn" data-bs-toggle="modal" data-bs-target="#ModalTaskEdit<%= task.id %>">
+              <a type="button" class="text-edit-btn" data-bs-toggle="modal" data-bs-target="#ModalTaskEdit<%= task.id %>">
                 <i class="fa-solid fa-pen"></i>
               </a>
               <div class="modal fade" id="ModalTaskEdit<%= task.id %>"tabindex="-1" aria-labelledby="ModalTaskEdit" aria-hidden="true">
@@ -179,7 +179,7 @@
                 <div class="form-group">
                   <%= f.input :details, class: 'form-control', placeholder: "Milk, Chicken..." %>
                 </div>
-                <%= f.submit 'Create task', class: 'btn-create' %>
+                <%= f.submit 'Create task', class: 'create-btn' %>
               <% end %>
             </div>
           </div>
@@ -204,7 +204,7 @@
             <div class="event-display">
               <h3><%= calendar.start_time %></h3>
               <h1><%= calendar.name %></h1>
-              <a type="button" class="event-edit-btn" data-bs-toggle="modal" data-bs-target="#ModalEventEdit">
+              <a type="button" class="text-edit-btn" data-bs-toggle="modal" data-bs-target="#ModalEventEdit">
                 <i class="fa-solid fa-pen"></i>
               </a>
               <div class="modal fade" id="ModalEventEdit" tabindex="-1" aria-labelledby="ModalEvent" aria-hidden="true">
@@ -299,7 +299,4 @@
       </div>
     </div>
   </div>
-  <div class="btn back-btn btn-default btn-primary">
-    <%= link_to "Back", topic_path(@topic) %>
-  </div>
-</div>
+  <%= link_to "Back", topic_path(@topic), :class => "create-btn" %>
