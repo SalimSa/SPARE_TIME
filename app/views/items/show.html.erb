@@ -81,7 +81,7 @@
             <%= image_tag object.images.first.src.to_s, alt: "Link image", width: 200 %>
             <div class="link-gem">
               <%= link_to content_tag(:i, "", class: "fa fa-thin fa-trash-can link-trash"), link_component_path(link), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-              <h3><%= object.title %></h3>
+              <h3><%= link_to object.title, link.url %></h3>
               <p><%= object.description %></p>
             </div>
           </div>
