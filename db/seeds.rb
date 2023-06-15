@@ -126,18 +126,7 @@ hashsymbols = Item.new(title: "HASH & SYMBOLS", description: "A Hash is a dictio
 hashsymbols.photo.attach(io: file_three, filename: "theme.png", content_type: "image/png")
 hashsymbols.save!
 
-puts 'Creating items for Front'
-html = Item.new(title: "HASH & SYMBOLS", description: "A Hash is a dictionary-like collection of unique keys. For each key, a value is associated.", topic: front)
-hashsymbols.photo.attach(io: file_four, filename: "theme.png", content_type: "image/png")
-hashsymbols.save!
 
-hashsymbols = Item.new(title: "HASH & SYMBOLS", description: "A Hash is a dictionary-like collection of unique keys. For each key, a value is associated.", topic: front)
-hashsymbols.photo.attach(io: file_five, filename: "theme.png", content_type: "image/png")
-hashsymbols.save!
-
-hashsymbols = Item.new(title: "HASH & SYMBOLS", description: "A Hash is a dictionary-like collection of unique keys. For each key, a value is associated.", topic: front)
-hashsymbols.photo.attach(io: file_six, filename: "theme.png", content_type: "image/png")
-hashsymbols.save!
 
 image_url = "https://images.unsplash.com/photo-1538448174498-9956c159edb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGxlZ298ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1400&q=60"
 
@@ -161,10 +150,6 @@ file_fifty_three = URI.open(image_url)
 file_fifty_four = URI.open(image_url)
 file_fifty_five = URI.open(image_url)
 file_fifty_six = URI.open(image_url)
-
-architecture = Theme.new(title: "Architecture", description: "Exploring the beauty of architectural marvels", user: user2)
-architecture.photo.attach(io: file_three, filename: "theme.png", content_type: "image/png")
-architecture.save!
 
 nature = Theme.new(title: "Nature", description: "Immerse yourself in the wonders of nature", user: user2)
 nature.photo.attach(io: file_four, filename: "theme.png", content_type: "image/png")
