@@ -1,32 +1,15 @@
 <div class="container topic-heading">
   <div class="topics-header">
-
-    <div class="topic-header">
-
-      <div class="back-btn">
-        <i class="fa-solid fa-arrow-left"></i>
-        <%= link_to "Go back", themes_path %>
-      </div>
-
-
-      <div class="add-new-topic">
-        <%= link_to new_theme_topic_path(@theme) do%>
-          <i class="fa-solid fa-circle-plus"></i>
-        <%end%>
-      </div>
-
-      <div style="width:165px;">
-      <h1></h1>
-      </div>
-
-    </div>
-
     <div class="topic-name">
       <h3><%= @theme.title %></h3>
       <h5><%= @theme.description %></h5>
     </div>
+    <div class="add-new-topic">
+      <%= link_to new_theme_topic_path(@theme) do%>
+        <i class="create-btn-icon fa-solid fa-circle-plus"></i>
+      <%end%>
+    </div>
   </div>
-
   <div class="themes-card-container">
     <% @topics.order(:title).each do |topic| %>
       <%= link_to topic_path(topic) do %>
@@ -37,10 +20,7 @@
       <% end %>
     <% end %>
   </div>
+  <%= link_to "Back", themes_path, :class => "create-btn" %>
 
-  <div class="back-btn">
-    <i class="fa-solid fa-arrow-left"></i>
-    <%= link_to "Go back", themes_path %>
-  </div>
 
 </div>
