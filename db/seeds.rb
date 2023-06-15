@@ -121,8 +121,23 @@ havana = Item.new(title: "Havana Oulala", description: "is a super cozy place at
 havana.photo.attach(io: file_twenty_seven, filename: "theme.png", content_type: "image/png")
 havana.save!
 
+puts 'Creating items for Ruby'
+hashsymbols = Item.new(title: "HASH & SYMBOLS", description: "A Hash is a dictionary-like collection of unique keys. For each key, a value is associated.", topic: ruby)
+hashsymbols.photo.attach(io: file_three, filename: "theme.png", content_type: "image/png")
+hashsymbols.save!
 
+puts 'Creating items for Front'
+html = Item.new(title: "HASH & SYMBOLS", description: "A Hash is a dictionary-like collection of unique keys. For each key, a value is associated.", topic: front)
+hashsymbols.photo.attach(io: file_four, filename: "theme.png", content_type: "image/png")
+hashsymbols.save!
 
+hashsymbols = Item.new(title: "HASH & SYMBOLS", description: "A Hash is a dictionary-like collection of unique keys. For each key, a value is associated.", topic: front)
+hashsymbols.photo.attach(io: file_five, filename: "theme.png", content_type: "image/png")
+hashsymbols.save!
+
+hashsymbols = Item.new(title: "HASH & SYMBOLS", description: "A Hash is a dictionary-like collection of unique keys. For each key, a value is associated.", topic: front)
+hashsymbols.photo.attach(io: file_six, filename: "theme.png", content_type: "image/png")
+hashsymbols.save!
 
 image_url = "https://images.unsplash.com/photo-1538448174498-9956c159edb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGxlZ298ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1400&q=60"
 
