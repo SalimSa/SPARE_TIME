@@ -37,6 +37,7 @@ body.landing-page .navbar {
   color:white;
   font-size: 40px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: "raleway";
 }
 
 
@@ -71,7 +72,7 @@ body.landing-page .navbar {
   width: 100%;
   padding-left: 160px;
   padding-right: 160px;
-  background-color: #f5f5f5;
+  background-color: white;
 }
 
 .review-card {
@@ -83,15 +84,14 @@ body.landing-page .navbar {
 .info-card {
   display: flex;
   justify-content: center;
-  padding-top: 30px;
-  background-color: #f5f5f5;
+  height: 80%;
+  background-color: white;
 }
 
 .reviews-header {
   display: flex;
   justify-content: center;
-  padding-top: 70px;
-  font-family: "Work Sans", "Helvetica", "sans-serif";
+  font-family: "raleway";
   font-weight: bold;
-  background-color: #f5f5f5;
+  background-color: white;
 }
