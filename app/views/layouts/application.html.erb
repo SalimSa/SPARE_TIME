@@ -6,7 +6,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+
+
+    <%= stylesheet_link_tag "application", "application", "data-turbo-track": "reload" %>
+
     <%= javascript_importmap_tags %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +27,7 @@
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
 
-    <div class="d-flex py-5">
+    <div class="<%= 'd-flex py-5' unless params[:controller] == 'pages' && params[:action] == 'landing' %>">
       <%= render "shared/sidebar" %>
       <div style="flex: auto;">
         <%= yield %>
