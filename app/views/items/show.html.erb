@@ -76,7 +76,7 @@
         </div>
       <div class="show-url">
         <% @links.each do |link| %>
-          <% object = LinkThumbnailer.generate("http://"+link.url) %>
+          <% object = LinkThumbnailer.generate(link.url) %>
           <div class="link-gem-container">
             <%= image_tag object.images.first.src.to_s, alt: "Link image", width: 200 %>
             <div class="link-gem">

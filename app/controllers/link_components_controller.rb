@@ -1,7 +1,16 @@
 class LinkComponentsController < ApplicationController
   before_action :set_link, only: [:destroy]
   def create
-    @link = LinkComponent.new(link_params)
+    link_params
+    if link_params[:url].match?(/https?\:(\\\\|\/\/)(www.)?/)
+
+      @link =  LinkComponent.new(link_params)
+    else
+      @link =  LinkComponent.new(url: "http://#{link_params[:url]}")
+    end
+
+
+    # @link = LinkComponent.new("www.#{link_params.sub(/https?\:(\\\\|\/\/)(www.)?/,'')}")
     @item = Item.find(params[:item_id])
     @link.item = @item
     @link.save
