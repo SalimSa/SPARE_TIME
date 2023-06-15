@@ -44,19 +44,19 @@
   <div class="task-container">
     <h4 class="my-events">My tasks</h4>
     <% @themes.each do |theme| %>
-      <div class="task-card">
-        <div class="theme-title">
-          <h5><%= theme.title.truncate(20) %></h5>
-        </div>
-        <div class="task-counter">
-          <span class="open-tasks"><%= theme.task_components.where(completed: false).count %></span> Open out of <span class="total-tasks"><%= theme.task_components.count %></span> tasks !
-          <div class="progress-bar">
-            <% if theme.task_components.count != 0 %>
-              <div class="progress" style="width: <%= (theme.task_components.where(completed: false).count.to_f / theme.task_components.count.to_f) * 100 %>%;"></div>
-            <% end %>
+      <% if theme.task_components.count != 0 %>
+        <div class="task-card">
+          <div class="theme-title">
+            <h5><%= theme.title.truncate(20) %></h5>
+          </div>
+          <div class="task-counter">
+            <span class="open-tasks"><%= theme.task_components.where(completed: false).count %></span> Open out of <span class="total-tasks"><%= theme.task_components.count %></span> tasks !
+            <div class="progress-bar">
+                <div class="progress" style="width: <%= (theme.task_components.where(completed: false).count.to_f / theme.task_components.count.to_f) * 100 %>%;"></div>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
