@@ -126,6 +126,7 @@ GEM
       ffi (>= 1.15.0)
     execjs (2.8.1)
     ffi (1.15.5)
+    flatpickr (4.6.11.0)
     font-awesome-sass (6.4.0)
       sassc (~> 2.0)
     geocoder (1.8.1)
@@ -328,6 +329,7 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  flatpickr
   font-awesome-sass (~> 6.1)
   geocoder
   importmap-rails

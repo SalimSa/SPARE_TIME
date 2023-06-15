@@ -76,7 +76,7 @@
         </div>
       <div class="show-url">
         <% @links.each do |link| %>
-          <% object = LinkThumbnailer.generate("http://"+link.url) %>
+          <% object = LinkThumbnailer.generate(link.url) %>
           <div class="link-gem-container">
             <%= image_tag object.images.first.src.to_s, alt: "Link image", width: 200 %>
             <div class="link-gem">
@@ -240,9 +240,15 @@
               </div>
               <div class="modal-body">
                 <div class="event-form">
-                  <div class="input-group"><%= f.input :start_time, label: "Date:" %></div>
-                  <%= f.input :name, label: "Event description:"%>
-                  <%= f.submit 'Create event', class: "create-btn" %>
+                  <div class="input-group">
+                    <%= f.input :start_time,
+                                as: :string,
+                                class: 'mb-2',
+                                label: "Date:",
+                                input_html: { data: { controller: "datepicker" } } %>
+                  </div>
+                    <%= f.input :name, label: "Event description:"%>
+                    <%= f.submit 'Create event', class: "create-btn" %>
                 </div>
               </div>
             </div>
