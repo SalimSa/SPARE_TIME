@@ -201,12 +201,16 @@
       <div class="event-display-container">
         <% @calendars.each do |calendar| %>
           <%= simple_form_for [@item, calendar] do |f| %>
-            <div class="event-display">
-              <h3><%= calendar.start_time %></h3>
-              <h1><%= calendar.name %></h1>
+            <div class="event-display-item">
+              <div>
+              <h5><strong><%= calendar.start_time %></strong></h5>
+              <h4><%= calendar.name %></h4>
+              </div>
+              <div class="pen">
               <a type="button" class="text-edit-btn" data-bs-toggle="modal" data-bs-target="#ModalEventEdit">
                 <i class="fa-solid fa-pen"></i>
               </a>
+              </div>
               <div class="modal fade" id="ModalEventEdit" tabindex="-1" aria-labelledby="ModalEvent" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">

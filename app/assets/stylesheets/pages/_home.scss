@@ -281,3 +281,24 @@
   font-family: "Segoe UI", Arial, sans-serif;
   height: 100px;
 }
+
+
+.event-display-item {
+  background-color: #F8F9FA;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  color: #555;
+  font-size: 16px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  height: 100px;
+  width: 420px;
+  display: flex;
+}
+
+.pen {
+  padding-left: 210px;
+}
