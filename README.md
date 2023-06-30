@@ -1,1 +1,2 @@
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+As the final project for the Le Wagon web-development bootcamp, Marta Vasallo, Salim Saadi and, Pierre Robertson, have created SpareTime. SpareTime is a Ruby on Rails note-taking app, which facilitates collating, storing, and recalling any type of data for anyone doing research. This project is a a testament to the hard work and everything we've learned in the past nine weeks during this bootcamp.
