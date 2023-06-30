@@ -2,5 +2,6 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit class: "create-btn" %>
+  <% submit_label = @theme.new_record? ? "Create File" : "Update File" %>
+  <%= f.button :submit, submit_label, class: "create-btn" %>
 <% end %>

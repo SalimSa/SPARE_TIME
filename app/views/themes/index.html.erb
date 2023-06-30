@@ -10,31 +10,21 @@
       <%= submit_tag "Search", class: "theme-search-submit" %>
     <% end %>
   </div>
-
   <div class="topics-header">
-
     <div class="topic-header">
-
       <div style="width:165px;">
       <h1></h1>
       </div>
-
-
       <div class="create-btn-icon">
         <%= link_to new_theme_path do%>
           <i class="create-btn-icon fa-solid fa-circle-plus"></i>
         <%end%>
       </div>
-
       <div style="width:165px;">
       <h1></h1>
       </div>
-
     </div>
   </div>
-
-
-
   <div class="themes-card-container" style="padding-top: 20px";>
     <% @themes.order(:title).each do |theme| %>
       <div class="card-favorite-btn">
@@ -46,7 +36,6 @@
             </div>
           </div>
         <% end %>
-
         <div class="favorite-btn">
           <% if theme.favorite? %>
             <%= link_to unfavorite_theme_path(theme), method: :patch do %>
@@ -56,6 +45,11 @@
             <%= link_to favorite_theme_path(theme), method: :patch do %>
               <i class="far fa-heart fa-lg"></i>
             <% end %>
+          <% end %>
+        </div>
+        <div class="file-edit-btn">
+          <%= link_to edit_theme_path(theme), class: "text-edit-btn" do %>
+            <i class="fa-solid fa-pen"></i>
           <% end %>
         </div>
       </div>

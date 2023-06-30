@@ -1,4 +1,4 @@
-.create-btn {
+.btn.create-btn, .create-btn {
   font-family: "lato";
   color: white;
   margin-top: 30px;
@@ -6,20 +6,35 @@
   padding: 10px 40px;
   border: none;
   border-radius: 5px;
-
-  // box-sizing: border-box;
-  // margin-bottom: 30px;
-  // text-decoration: none;
-  // justify-content: center;
-  // align-items: center;
-
-  // // make sure that the content is well centered in the padding!!
-  // a {
   text-decoration: none;
-  //   color: white;
-  // }
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 30px;
   }
 
+  .delete-file {
+    font-family: "lato";
+    color: white;
+    margin-top: 30px;
+    background-color: #F24343;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    a {
+      margin-top: 30px;
+    }
+  }
+
+  .delete-file:hover {
+    opacity: .75;
+    color: white;
+  }
+  .btn.create-btn:hover{
+    background-color: #F24343;
+    opacity: .75;
+    color: white;
+  }
 .create-btn:hover {
   opacity: .75;
   color: white;
@@ -155,14 +170,16 @@ h4 h5 h6 p {
   font-size: 20px;
   background: none;
   border: none;
-
   i {
-    color: #F24343
+    color: #F24343;
   }
-
-  ;
 }
 
+.file-edit-btn {
+  position: absolute;
+  top: 5%;
+  right: 4%;
+}
 
 
 .task-edit-btn,

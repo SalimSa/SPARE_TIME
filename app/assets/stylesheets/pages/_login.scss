@@ -18,34 +18,53 @@ margin-bottom: 100px;
 
 }
 
+.signup {
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-bottom: 100px;
+  margin-top: 90px;
+  background-color: black;
+  font-size: 14px;
+  line-height: 1.42857143;
+  max-width: 620px !important;
+  color: white !important;
+  border-radius: 25px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  box-decoration-break: slice;
+
+}
+
 
 .form-inputs{
   margin-top: 30px!important;
-  color: white;
+  // color: black;
   font-size: 1.2rem;
   font-family: "Work Sans", "Helvetica", "sans-serif";
   padding: 0.5rem 1.25rem 0.35rem;
   font-size: 16px;
   margin: 2px;
   border-radius: 0.45rem;
-  margin-right: 20px;
   background-color: transparent;
   border: 2px solid white;
+  color: white;
   transition: all 0.3s ease;
   font-weight: bold;
   margin-top: 5px;
   margin-bottom: 8px;
   align-items: center;
+  justify-content: center;
 }
 
-.form-inputs:hover {
-  color: #fcfbfb;
-  background-color: #202223;
-  border-radius: 0.25rem;
-  transition: all 0.3s ease;
-  border-color: #818686;
-  font-weight: bold;
-}
+// .form-inputs:hover {
+//   color: #fcfbfb;
+//   background-color: #202223;
+//   border-radius: 0.25rem;
+//   transition: all 0.3s ease;
+//   border-color: #818686;
+//   font-weight: bold;
+// }
 
 
 
@@ -68,16 +87,38 @@ margin-bottom: 100px;
 
 }
 
+.devise-links {
+  a{
+    text-decoration: none;
+    color: white;
+  }
+}
+.devise-links-new {
+  margin: 20px;
+  a{
+    text-decoration: none;
+    color: black;
+  }
+}
+
   // a{
   //   margin-top: 30px!important;
   //   color: white !important;
   // }
 
-.form-actions:hover {
-  color: #130f02;
+.form-actions .btn:hover {
+  color: white;
   background-color: #e9eeef;
   border-radius: 0.25rem;
   transition: all 0.3s ease;
   border-color: #e9eeef;
   font-weight: bold;
+}
+
+
+.signup-btn {
+  color: black;
+  padding: 20px 40px;
+  border-radius: 15px;
+  border: 2px black;
 }
