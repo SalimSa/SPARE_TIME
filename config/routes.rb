@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "home", to: "pages#home"
 
   resources :themes do
-    resources :topics, only: [:show, :new, :create]
+    resources :topics, only: [:show, :new, :create, :edit, :update]
 
     member do
       get 'favorite', to: 'themes#favorite', as: :favorite
@@ -18,10 +18,11 @@ Rails.application.routes.draw do
   end
 
   resources :topics, only: [:show, :edit, :update, :destroy] do
-    resources :items, only: [:new, :create]
+    resources :items, only: [:new, :create, :update, :edit, :destroy_item]
   end
 
-  resources :items, only: [:show, :edit, :update, :destroy] do
+  resources :items, only: [:show, :edit, :update, :destroy_item] do
+    delete 'destroy_item', on: :member
     resources :text_components, only: [:new, :create, :update]
     resources :link_components, only: [:new, :create, :update]
     resources :task_components, only: [:new, :create, :update]

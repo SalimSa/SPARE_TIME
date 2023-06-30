@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_topic, only: [:create]
+  before_action :set_item, only: [:update, :edit, :destroy_item]
 
   def index
     @items = Item.all
@@ -53,16 +54,16 @@ class ItemsController < ApplicationController
     end
   end
 
-  # def edit
-  # end
+  def edit
+  end
 
-  # def update
-  #   if @topic.update(topic_params)
-  #     redirect_to topic_path(@topic)
-  #   else
-  #     render :new, status: :unprocessable_entity
-  #   end
-  # end
+  def update
+    if @item.update(item_params)
+      redirect_to item_path(@item)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   def destroy
     @text = TextComponent.find(params[:id])
@@ -84,13 +85,20 @@ class ItemsController < ApplicationController
     @event = EventComponent.find(params[:id])
     @event.destroy
     redirect_to item_path(@event.item), status: :see_other
-
   end
 
+  def destroy_item
+    @item.destroy
+    redirect_to topic_path(@item.topic), status: :see_other
+  end
 
   private
   def set_topic
     @topic = Topic.find(params[:topic_id])
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   def item_params
